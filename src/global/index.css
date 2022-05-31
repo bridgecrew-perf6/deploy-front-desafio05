@@ -87,14 +87,6 @@ body {
 	color: #f8f8f9;
 }
 
-.column {
-	display: flex;
-	flex-direction: column;
-}
-.row {
-	display: flex;
-}
-
 .ai-center {
 	align-items: center;
 }
@@ -106,4 +98,16 @@ body {
 .column {
 	display: flex;
 	flex-direction: column;
+}
+
+.row {
+	display: flex;
+}
+
+.jc-center {
+	justify-content: center;
+}
+
+.ai-center {
+	align-items: center;
 }
