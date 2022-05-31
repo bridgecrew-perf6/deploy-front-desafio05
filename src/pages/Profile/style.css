@@ -1,7 +1,11 @@
 navbar {
 	display: flex;
 	min-height: 100vh;
-	width: 108px;
+	width: 10.8rem;
 	background-color: #f0f0f5;
 	padding-top: 55px;
+}
+
+.gap-nav-items {
+	gap: 81px;
 }

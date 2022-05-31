@@ -1,4 +1,15 @@
 .container-navlink {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.navlink-font {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
 }

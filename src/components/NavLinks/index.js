@@ -1,12 +1,10 @@
 import "./style.css";
 
-function NavLink() {
+function NavLink({ image, text, color }) {
 	return (
 		<div className='container-navlink'>
-			<img src='' alt='home' />
-			<h2>Home</h2>
-			<img src='' alt='clientes' />
-			<h2>Cliente</h2>
+			<img src={image} alt='clientes' />
+			<h2 className={`navlink-font ${color}`}>{text}</h2>
 		</div>
 	);
 }
