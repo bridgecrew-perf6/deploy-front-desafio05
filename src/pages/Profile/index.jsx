@@ -12,11 +12,13 @@ function Profile() {
 				image={ProfileImg}
 				text='Clientes'
 				color='color-navbar-text-default'
+				display='hidden'
 			/>
 			<NavLink
 				image={DocumentImg}
 				text='Cobranças'
 				color='color-navbar-text-default'
+				display='hidden'
 			/>
 		</navbar>
 	);
