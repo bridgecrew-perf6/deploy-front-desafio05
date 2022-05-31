@@ -1,0 +1,41 @@
+.bg-card-default {
+	background-color: #eef6f6;
+}
+
+.bg-card-danger {
+	background-color: #ffefef;
+}
+
+.bg-card-caution {
+	background-color: #fcf6dc;
+}
+
+.container-card-charge {
+	max-height: 111px;
+	padding: 0 46px;
+	border-radius: 30px;
+}
+
+.container-card-charge img {
+	margin-right: 50px;
+}
+
+.container-card-charge h1 {
+	margin-top: 8px;
+}
+
+.card-charge-title {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	color: #3f3f55;
+}
+
+.card-charge-subtitle {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 2.4rem;
+	line-height: 3.1rem;
+	color: #3f3f55;
+}
