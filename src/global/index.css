@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap");
+
+/* margin padding font REM */
+/* width height px*/
+
+#root {
+	min-height: 100vh;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+/* fonts */
+
+.stepper-title {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	color: #0e8750;
+}
+
+.stepper-text {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	color: #3f3f55;
+}
+
+.data-title {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 2.4rem;
+	line-height: 3.1rem;
+	color: #343447;
+}
+
+.data-label {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.4rem;
+	line-height: 2rem;
+	color: #343447;
+}
+
+.data-input {
+	font-family: "Inter";
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #667085;
+}
+
+.data-text {
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	color: #3f3f55;
+}
+
+.menu-title {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	color: #343447;
+}
+
+.btn {
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #f8f8f9;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+.row {
+	display: flex;
+}
+
+.ai-center {
+	align-items: center;
+}
+
+.mg-left-24 {
+	margin-left: 24px;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}

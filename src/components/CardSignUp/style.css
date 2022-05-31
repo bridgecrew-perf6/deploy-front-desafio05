@@ -1,0 +1,9 @@
+.container-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container-form h1.data-title {
+	margin-bottom: 12px;
+}
