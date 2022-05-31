@@ -22,6 +22,11 @@ function Profile() {
 					display='hidden'
 				/>
 			</navbar>
+			<div className='row'>
+				<CardCharge bgColor='bg-card-default' image={DocumentImgSuccess} />
+				<CardCharge bgColor='bg-card-danger' image={DocumentImgCaution} />
+				<CardCharge bgColor='bg-card-caution' image={DocumentImgDanger} />
+			</div>
 		</div>
 	);
 }
