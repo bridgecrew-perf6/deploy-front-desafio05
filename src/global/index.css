@@ -94,6 +94,21 @@ body {
 	color: #3f3f55;
 }
 
+.title-main-table {
+	font-family: "Montserrat";
+	font-weight: 600;
+	font-size: 2.6rem;
+	line-height: 3.4rem;
+}
+
+.font-profile {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #0e8750;
+}
+
 /* pre-confs */
 
 .column {
