@@ -1,23 +1,25 @@
-.container-table-charge {
+.container-table-clients {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	background-color: #ffffff;
-	max-width: 360px;
+	min-width: 500px;
 	border-radius: 25px;
 	padding: 15px 0;
+}
+
+.margin-right-img {
+	margin-right: 12px;
 }
 
 .table-charge-div-title {
 	width: 100%;
 	justify-content: space-between;
-	align-items: baseline;
-	padding-left: 54px;
-	padding-right: 24px;
-	margin-bottom: 5px;
+	align-items: center;
 }
 
 .table-charge-div-subtitle {
+	width: 100%;
 	display: grid;
 	grid-template-columns: auto auto auto;
 	padding-top: 10px;

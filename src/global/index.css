@@ -132,3 +132,7 @@ body {
 .color-navbar-text-default {
 	color: #343447;
 }
+
+.ai-baseline {
+	align-items: baseline;
+}
