@@ -50,16 +50,6 @@
 	padding: 0 10px;
 	text-align: center;
 }
-span.table-charge-count {
-	font-family: "Montserrat";
-	font-weight: 700;
-	font-size: 1.6rem;
-	line-height: 2.1rem;
-	color: #971d1d;
-	background-color: #ffefef;
-	border-radius: 8px;
-	padding: 0 15px;
-}
 
 span.table-charge-footer {
 	color: #da0175;
@@ -70,4 +60,8 @@ span.table-charge-footer {
 	line-height: 2.3rem;
 	cursor: pointer;
 	margin: 13px 0 12px 0;
+}
+
+.margin-title {
+	margin-top: 51px;
 }
