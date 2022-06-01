@@ -17,6 +17,10 @@
 	margin-bottom: 5px;
 }
 
+.margin-text-charge {
+	margin-right: 23px;
+}
+
 .table-charge-div-subtitle {
 	display: grid;
 	grid-template-columns: auto auto auto;

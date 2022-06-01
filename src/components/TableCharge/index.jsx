@@ -4,7 +4,9 @@ function TableCharge() {
 	return (
 		<div className='container-table-charge'>
 			<div className='row table-charge-div-title'>
-				<h1 className='table-charge-title'>Cobranças Vencidas</h1>
+				<h1 className='table-charge-title margin-text-charge'>
+					Cobranças Vencidas
+				</h1>
 				<span className='table-charge-count'>10</span>
 			</div>
 			<div className='table-charge-div-subtitle'>
