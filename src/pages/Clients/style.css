@@ -1,0 +1,26 @@
+header{
+    width: 100vw;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.id{
+    display: flex;
+    align-items: center;
+}
+
+.client-area{
+border-top: 1px solid rgba(172, 217, 197, 1);
+}
+
+.client-area-header{
+    display: flex;
+    align-items: center;
+}
+
+.theme{
+    display: flex;
+    align-items: center;
+}
