@@ -9,3 +9,8 @@ navbar {
 .gap-nav-items {
 	gap: 81px;
 }
+
+.gap-charge-cards {
+	width: 100%;
+	gap: 36px;
+}

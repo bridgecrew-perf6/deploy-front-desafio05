@@ -1,11 +1,11 @@
-import DocumentImg from "../../assets/documents.svg";
-import HomeImg from "../../assets/home.svg";
-import ProfileImg from "../../assets/profile.svg";
-import NavLink from "../../components/NavLinks";
 import DocumentImgCaution from "../../assets/document-caution.svg";
 import DocumentImgDanger from "../../assets/document-danger.svg";
 import DocumentImgSuccess from "../../assets/document-success.svg";
+import DocumentImg from "../../assets/documents.svg";
+import HomeImg from "../../assets/home.svg";
+import ProfileImg from "../../assets/profile.svg";
 import CardCharge from "../../components/CardCharge";
+import NavLink from "../../components/NavLinks";
 import "./style.css";
 
 function Profile() {
@@ -26,7 +26,7 @@ function Profile() {
 					display='hidden'
 				/>
 			</navbar>
-			<div className='row'>
+			<div className='row jc-center gap-charge-cards'>
 				<CardCharge bgColor='bg-card-default' image={DocumentImgSuccess} />
 				<CardCharge bgColor='bg-card-danger' image={DocumentImgCaution} />
 				<CardCharge bgColor='bg-card-caution' image={DocumentImgDanger} />
