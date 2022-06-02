@@ -1,3 +1,5 @@
+import { alignProperty } from "@mui/material/styles/cssUtils";
+import { useState } from "react";
 import ArrowImg from "../../assets/arrow.svg";
 import ClientDanger from "../../assets/client-danger.svg";
 import ClientSuccess from "../../assets/client-success.svg";
@@ -15,6 +17,7 @@ import TableClients from "../../components/TableClients";
 import "./style.css";
 
 function Profile() {
+
 	const obj = [
 		{
 			clientName: "Sara Silva",

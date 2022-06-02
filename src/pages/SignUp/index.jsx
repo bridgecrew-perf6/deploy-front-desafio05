@@ -19,7 +19,11 @@ function SignUp() {
 		infos: true,
 		password: false,
 	});
-	const [error, setError] = useState("Todos os campos são obrigatórios");
+	const [errorName, setErrorName] = useState('');
+	const [errorEmail, setErrorEmail] = useState('');
+	const [errorPassword, setErrorPassword] = useState('');
+	const [errorConfirmPassword, setErrorConfirmPassword] = useState('');
+
 	const [forms, setForms] = useState({
 		nome: "",
 		email: "",
@@ -63,12 +67,19 @@ function SignUp() {
 
 	function handleSubmitRegister(e) {
 		e.preventDefault();
-		setError("");
-		if (!forms.nome || !forms.email) {
-			setError("Todos os campos são obrigatórios");
-			console.log(error);
+		if (!forms.nome ) {
+			setErrorName( 'O campo nome é obrigatório');
+			return;
+		} 
+		setErrorName('');
+		
+	
+		if(!forms.email){
+			setErrorEmail('O campo e-mail é obrigatório');
 			return;
 		}
+		setErrorEmail('');
+		
 		setlogin({
 			infos: false,
 			password: true,
@@ -80,23 +91,23 @@ function SignUp() {
 	function handleSubmitPassword(e) {
 		e.preventDefault();
 
-		setError("");
-		if (forms.password.length < 8) {
-			setError("A senha precisa ter no minimo 8 caracteres");
-			console.log(error);
-			return;
+		if (!forms.password) {
+			setErrorPassword('A senha é obrigatório');
+			return;	
 		}
+		setErrorPassword('');
 
-		if (!forms.password || !forms.confirmPassword) {
-			setError("Todos os campos são obrigatórios");
-			console.log(error);
+		if (forms.password.length < 8) {
+			setErrorPassword('A senha precisa ter no minimo 8 caracteres');
 			return;
 		}
+		setErrorPassword('');
+
 		if (forms.password !== forms.confirmPassword) {
-			setError("password não confirmada");
-			console.log(error);
+			setErrorConfirmPassword('As senhas não coincidem');
 			return;
 		}
+		setErrorConfirmPassword('');
 		setSucesso(true);
 		setlogin({
 			infos: false,
@@ -155,16 +166,21 @@ function SignUp() {
 								name='nome'
 								label='Nome*'
 								id='nome'
+								placeholder='Digite seu nome'
 								value={forms.nome}
 								handleChangeForm={handleChangeForm}
+								error={errorName}
 							/>
+							
 							<Inputs
 								type='email'
 								name='email'
 								label='E-mail*'
 								id='email'
+								placeholder='Digite seu e-mail'
 								value={forms.email}
 								handleChangeForm={handleChangeForm}
+								error={errorEmail}
 							/>
 						</CardSignUp>
 						<Btn type='submit' text='Continuar' />
@@ -197,18 +213,21 @@ function SignUp() {
 								type='password'
 								name='password'
 								label='Senha*'
-								placeholder='Digite sua senha'
 								id='password'
+								placeholder='••••••••'
 								value={forms.password}
 								handleChangeForm={handleChangeForm}
+								error={errorPassword}
 							/>
 							<Inputs
 								type='password'
 								name='confirmPassword'
 								label='Repita a senha*'
 								id='confirmPassword'
+								placeholder='••••••••'
 								value={forms.confirmPassword}
 								handleChangeForm={handleChangeForm}
+								error={errorConfirmPassword}
 							/>
 						</CardSignUp>
 						<Btn type='submit' text='Entrar' />
