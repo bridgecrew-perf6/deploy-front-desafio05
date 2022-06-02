@@ -27,7 +27,7 @@ function Clients() {
 				/>
 			</navbar>
 
-			<div>
+			<div className="centralize">
 				<header>
 					<p>Clientes</p>
 					<div className="id">
@@ -44,34 +44,39 @@ function Clients() {
 						</div>
 						<div className="customer-interaction">
 							<button>+Adicionar cliente</button>
-							<img src={Filter}/>
-							<input 
-							placeholder="Pesquisa"
+							<img src={Filter} />
+							<input
+								placeholder="Pesquisa"
 							//imagem da lupa
 							/>
 						</div>
 					</div>
-					<div className="customer-registration">
-						<div className="line-with-titles">
-							<p><img src={Order}/>Cliente</p>
-							<p>CPF</p>
-							<p>E-mail</p>
-							<p>Telefone</p>
-							<p>Status</p>
-							<p>Criar Cobbrança</p>
-						</div>
-						<div className="clients">
-							<p>Sara da Silva</p>
-							<p>054 356 255 87</p>
-							<p>sarasilva@cubos.io</p>
-							<p>71 9 9462 8654</p>
-						</div>
-						<div className="status">Inadiplente</div>
-						<div className="charge">
-							<img src={Charge}/>
-							<p>Cobrança</p>
-						</div>
+					<div className="line-with-titles">
+						<table>
+							<thead>
+								<tr>
+									<th className="center-order"><img src={Order} />Cliente</th>
+									<th>CPF</th>
+									<th>E-mail</th>
+									<th>Telefone</th>
+									<th >Status</th>
+									<th>Criar Cobranças</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Sara da Silva</td>
+									<td>054 356 255 87</td>
+									<td>sarasilva@cubos.io</td>
+									<td>71 9 9462 8654</td>
+									<td>Inadiplente</td>
+									<td><img src={Charge} /></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
+
+
 				</div>
 
 			</div>
