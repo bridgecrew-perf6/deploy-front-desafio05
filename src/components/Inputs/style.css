@@ -9,3 +9,16 @@
 label.data-label {
 	margin-top: 20px;
 }
+
+.font-form-error {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	color: #971d1d;
+}
+
+.align-form-error {
+	margin-top: 5px;
+	margin-left: 10px;
+}

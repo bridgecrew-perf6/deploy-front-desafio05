@@ -19,10 +19,10 @@ function SignUp() {
 		infos: true,
 		password: false,
 	});
-	const [errorName, setErrorName] = useState('');
-	const [errorEmail, setErrorEmail] = useState('');
-	const [errorPassword, setErrorPassword] = useState('');
-	const [errorConfirmPassword, setErrorConfirmPassword] = useState('');
+	const [errorName, setErrorName] = useState("");
+	const [errorEmail, setErrorEmail] = useState("");
+	const [errorPassword, setErrorPassword] = useState("");
+	const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
 
 	const [forms, setForms] = useState({
 		nome: "",
@@ -67,19 +67,18 @@ function SignUp() {
 
 	function handleSubmitRegister(e) {
 		e.preventDefault();
-		if (!forms.nome ) {
-			setErrorName( 'O campo nome é obrigatório');
-			return;
-		} 
-		setErrorName('');
-		
-	
-		if(!forms.email){
-			setErrorEmail('O campo e-mail é obrigatório');
+		if (!forms.nome) {
+			setErrorName("O campo nome é obrigatório");
 			return;
 		}
-		setErrorEmail('');
-		
+		setErrorName("");
+
+		if (!forms.email) {
+			setErrorEmail("O campo e-mail é obrigatório");
+			return;
+		}
+		setErrorEmail("");
+
 		setlogin({
 			infos: false,
 			password: true,
@@ -92,22 +91,22 @@ function SignUp() {
 		e.preventDefault();
 
 		if (!forms.password) {
-			setErrorPassword('A senha é obrigatório');
-			return;	
+			setErrorPassword("O campo senha é obrigatório");
+			return;
 		}
-		setErrorPassword('');
+		setErrorPassword("");
 
 		if (forms.password.length < 8) {
-			setErrorPassword('A senha precisa ter no minimo 8 caracteres');
+			setErrorPassword("A senha precisa ter no mínimo 8 caracteres");
 			return;
 		}
-		setErrorPassword('');
+		setErrorPassword("");
 
 		if (forms.password !== forms.confirmPassword) {
-			setErrorConfirmPassword('As senhas não coincidem');
+			setErrorConfirmPassword("As senhas não coincidem");
 			return;
 		}
-		setErrorConfirmPassword('');
+		setErrorConfirmPassword("");
 		setSucesso(true);
 		setlogin({
 			infos: false,
@@ -171,7 +170,7 @@ function SignUp() {
 								handleChangeForm={handleChangeForm}
 								error={errorName}
 							/>
-							
+
 							<Inputs
 								type='email'
 								name='email'
