@@ -1,0 +1,11 @@
+.container {
+    width: 92px;
+    height: 51px;
+
+    display: flex;
+}
+
+.conteiner img {
+    width: 19px;
+    height: 8.25px;
+}

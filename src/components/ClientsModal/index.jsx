@@ -2,8 +2,37 @@ import People from "../../assets/people.svg";
 import Close from "../../assets/close.svg";
 import Inputs from "../Inputs";
 import './style.css';
+import { alignProperty } from "@mui/material/styles/cssUtils";
 
 function ClientsModal({ open, handleClose }) {
+
+   async function handleSubmit(e){
+        e.preventDefaul()
+
+        // try{
+        //     const response = await alignProperty.post('/registerClient', 
+        //     {
+        //         name: f ,
+        //         email: f , 
+        //         cpf: f,
+        //         phone: f,
+        //         adress: f,
+        //         complemento: f,
+        //         cep: f,
+        //         district: f,
+        //         city: f,
+        //         uf: 
+        //     },
+        //     {
+        //         headers: {
+        //             Authorization: `Bearer ${token}` 
+        //         }
+        //     }
+        //     )
+        // }catch(error){
+
+        // }
+    }
     return (
         <>
             {open &&
