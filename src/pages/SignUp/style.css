@@ -1,10 +1,13 @@
 .container {
 	display: flex;
+	min-width: 100vw;
 	min-height: 100vh;
 }
 
 .div-register {
-	width: 66%;
+	display: flex;
+	min-width: 60vw;
+	height: 100%;
 }
 
 .footer-menu-title {
@@ -12,6 +15,7 @@
 	align-items: baseline;
 	justify-content: center;
 	margin-top: 19px;
+	height: 100%;
 }
 
 span.pink {
@@ -20,17 +24,20 @@ span.pink {
 	text-decoration: underline;
 }
 
+a {
+	text-decoration: none;
+}
+
 .lines {
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	margin-top: 25rem;
 	gap: 8px;
 }
 
-a {
-	text-decoration: none;
-}
-
-.white {
-	color: #f8f8f9;
+@media (max-width: 1024px) {
+	.lines {
+		margin-top: 8.5rem;
+	}
 }

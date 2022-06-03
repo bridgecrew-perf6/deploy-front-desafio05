@@ -182,6 +182,7 @@ function SignUp() {
 								error={errorEmail}
 							/>
 						</CardSignUp>
+
 						<Btn type='submit' text='Continuar' />
 
 						<div className='footer-menu-title'>

@@ -22,3 +22,11 @@ label.data-label {
 	margin-top: 5px;
 	margin-left: 10px;
 }
+
+.danger-border-error {
+	border: 1px solid red;
+}
+
+.danger-border-error:active {
+	border: 1px solid red;
+}

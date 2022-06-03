@@ -96,7 +96,7 @@ function Profile() {
 	];
 
 	return (
-		<div className='row'>
+		<div className='container-profile'>
 			<navbar className='column ai-center gap-nav-items'>
 				<NavLink image={HomeImg} text='Home' color='main-pink' />
 				<NavLink
@@ -112,9 +112,10 @@ function Profile() {
 					display='hidden'
 				/>
 			</navbar>
-			<div className='container-tables'>
-				<div className='row jc-space-between ai-baseline container-user-profile'>
-					<h1 className='title-main-table margin-title'>Resumo de cobranças</h1>
+
+			<div className='container-profile-dashboard'>
+				<div className='container-profile-user'>
+					<h1 className='title-main-table'>Resumo de cobranças</h1>
 					<div className='row ai-center profile-gap'>
 						<img src={ImgProfile} alt='' />
 						<span className='font-profile'>Lorena</span>
@@ -122,54 +123,53 @@ function Profile() {
 					</div>
 				</div>
 				<hr className='divisor-profile' />
-				<div className='column'>
-					<div className='row jc-center gap-charge-cards'>
-						<CardCharge
-							bgColor='bg-card-default'
-							image={DocumentImgSuccess}
-							text='Cobranças Vencidas
+
+				<div className='container-profile-cards '>
+					<CardCharge
+						bgColor='bg-card-default'
+						image={DocumentImgSuccess}
+						text='Cobranças Vencidas
 '
-						/>
-						<CardCharge
-							bgColor='bg-card-danger'
-							image={DocumentImgCaution}
-							text='Cobranças Previstas'
-						/>
-						<CardCharge
-							bgColor='bg-card-caution'
-							image={DocumentImgDanger}
-							text='Cobranças Pagas'
-						/>
-					</div>
-					<div className='row jc-center gap-table-cards'>
-						<TableCharge
-							text='Cobranças Vencidas'
-							obj={obj}
-							countStyleColor='table-charge-count-danger'
-						/>
-						<TableCharge
-							text='Cobranças Previstas'
-							obj={obj}
-							countStyleColor='table-charge-count-caution'
-						/>
-						<TableCharge
-							text='Cobranças Pagas'
-							obj={obj}
-							countStyleColor='table-charge-count-success'
-						/>
-					</div>
-					<div className='row jc-center gap-table-cards'>
-						<TableClients
-							image={ClientDanger}
-							obj2={obj2}
-							countStyleColor='table-charge-count-danger'
-						/>
-						<TableClients
-							image={ClientSuccess}
-							obj2={obj2}
-							countStyleColor='table-charge-count-success'
-						/>
-					</div>
+					/>
+					<CardCharge
+						bgColor='bg-card-danger'
+						image={DocumentImgCaution}
+						text='Cobranças Previstas'
+					/>
+					<CardCharge
+						bgColor='bg-card-caution'
+						image={DocumentImgDanger}
+						text='Cobranças Pagas'
+					/>
+				</div>
+				<div className='container-profile-cards '>
+					<TableCharge
+						text='Cobranças Vencidas'
+						obj={obj}
+						countStyleColor='table-charge-count-danger'
+					/>
+					<TableCharge
+						text='Cobranças Previstas'
+						obj={obj}
+						countStyleColor='table-charge-count-caution'
+					/>
+					<TableCharge
+						text='Cobranças Pagas'
+						obj={obj}
+						countStyleColor='table-charge-count-success'
+					/>
+				</div>
+				<div className='container-profile-cards '>
+					<TableClients
+						image={ClientDanger}
+						obj2={obj2}
+						countStyleColor='table-charge-count-danger'
+					/>
+					<TableClients
+						image={ClientSuccess}
+						obj2={obj2}
+						countStyleColor='table-charge-count-success'
+					/>
 				</div>
 			</div>
 		</div>

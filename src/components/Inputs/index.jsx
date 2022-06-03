@@ -9,6 +9,7 @@ function Inputs({
 	value,
 	handleChangeForm,
 	error,
+	border,
 }) {
 	return (
 		<div className='column'>
@@ -16,7 +17,7 @@ function Inputs({
 				{label}
 			</label>
 			<input
-				className='input'
+				className={`input ${border}`}
 				type={type}
 				name={name}
 				id={id}

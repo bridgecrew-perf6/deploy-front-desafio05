@@ -3,9 +3,9 @@
 	align-items: center;
 	flex-direction: column;
 	background-color: #ffffff;
-	max-width: 360px;
 	border-radius: 25px;
 	padding: 15px 0;
+	min-width: 367px;
 }
 
 .table-charge-div-title {
@@ -52,6 +52,7 @@
 	padding: 0 10px;
 	text-align: center;
 }
+
 span.table-charge-count {
 	font-family: "Montserrat";
 	font-weight: 700;
