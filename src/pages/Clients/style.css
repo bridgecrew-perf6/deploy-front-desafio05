@@ -6,6 +6,8 @@ body {
 }
 
 .centralize {
+    margin-left: 45px;
+
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -171,11 +173,25 @@ header p {
 .line-with-titles table td {
     display: table-cell;
 
+    padding-top: 8px;
+    border-top: 1px solid rgba(239, 240, 246, 1);
+
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
     color: #747488;
+}
+
+.status{
+    width: 99px;
+    height: 5px;
+
+    padding: 0px 8px;
+    gap: 4px;
+
+    background: #FFEFEF;
+    border-radius: 8px;
 }
 
 .line-with-titles table td img{

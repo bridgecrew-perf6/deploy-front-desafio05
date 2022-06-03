@@ -7,11 +7,17 @@ import Filter from "../../assets/filter.svg";
 import Order from "../../assets/order.svg";
 import Charge from "../../assets/charge.svg"
 import "./style.css";
+import ClientsModal from "../../components/ClientsModal";
+import { useState } from "react";
 
 function Clients() {
+	const [openClientsModal, setOpenClientsModal] = useState(false)
+
+	function handleEditClient() {setOpenClientsModal(true)}
+
 	return (
 		<div className='row'>
-			<navbar className='column ai-center gap-nav-items'>
+			<div className='column ai-center gap-nav-items'>
 				<NavLink image={HomeImg} text='Home' color='main-pink' />
 				<NavLink
 					image={ProfileImg}
@@ -25,7 +31,7 @@ function Clients() {
 					color='color-navbar-text-default'
 					display='hidden'
 				/>
-			</navbar>
+			</div>
 
 			<div className="centralize">
 				<header>
@@ -40,10 +46,14 @@ function Clients() {
 					<div className="client-area-header">
 						<div className="theme">
 							<img src={People} />
-							<h3>Clients</h3>
+							<h3>Clientes</h3>
 						</div>
 						<div className="customer-interaction">
-							<button>+Adicionar cliente</button>
+							<button
+								onClick={() => setOpenClientsModal(true)}
+							>
+								+Adicionar cliente
+							</button>
 							<img src={Filter} />
 							<input
 								placeholder="Pesquisa"
@@ -51,6 +61,10 @@ function Clients() {
 							/>
 						</div>
 					</div>
+					<ClientsModal
+						open={openClientsModal}
+						handleClose={() => setOpenClientsModal(false)}
+					/>
 					<div className="line-with-titles">
 						<table>
 							<thead>
@@ -60,7 +74,7 @@ function Clients() {
 									<th>E-mail</th>
 									<th>Telefone</th>
 									<th >Status</th>
-									<th>Criar Cobranças</th>
+									<th>Criar Cobrança</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -69,7 +83,7 @@ function Clients() {
 									<td>054 356 255 87</td>
 									<td>sarasilva@cubos.io</td>
 									<td>71 9 9462 8654</td>
-									<td>Inadiplente</td>
+									<td className="status">Inadiplente</td>
 									<td><img src={Charge} /></td>
 								</tr>
 							</tbody>
