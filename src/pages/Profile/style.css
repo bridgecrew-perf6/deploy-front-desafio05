@@ -14,6 +14,13 @@ navbar {
 	padding-top: 55px;
 }
 
+.container-navbar-items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 81px;
+}
+
 .container-profile-user {
 	display: flex;
 	justify-content: space-between;
@@ -48,12 +55,4 @@ navbar {
 	justify-content: center;
 	margin: 0px 114px 24px 80px;
 	gap: 36px;
-}
-
-.gap-nav-items {
-	gap: 81px;
-}
-
-.profile-gap {
-	gap: 10px;
 }

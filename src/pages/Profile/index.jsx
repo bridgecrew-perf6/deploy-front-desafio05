@@ -97,7 +97,7 @@ function Profile() {
 
 	return (
 		<div className='container-profile'>
-			<navbar className='column ai-center gap-nav-items'>
+			<navbar className='container-navbar-items'>
 				<NavLink image={HomeImg} text='Home' color='main-pink' />
 				<NavLink
 					image={ProfileImg}
