@@ -3,9 +3,9 @@
 	align-items: center;
 	flex-direction: column;
 	background-color: #ffffff;
-	max-width: 360px;
 	border-radius: 25px;
 	padding: 15px 0;
+	min-width: 367px;
 }
 
 .table-charge-div-title {
@@ -52,15 +52,29 @@
 	padding: 0 10px;
 	text-align: center;
 }
+
 span.table-charge-count {
 	font-family: "Montserrat";
 	font-weight: 700;
 	font-size: 1.6rem;
 	line-height: 2.1rem;
-	color: #971d1d;
-	background-color: #ffefef;
 	border-radius: 8px;
 	padding: 0 15px;
+}
+
+span.table-charge-count-danger {
+	color: #971d1d;
+	background-color: #ffefef;
+}
+
+span.table-charge-count-caution {
+	color: #c5a605;
+	background-color: #fcf6dc;
+}
+
+span.table-charge-count-success {
+	color: #1fa7af;
+	background-color: #eef6f6;
 }
 
 span.table-charge-footer {

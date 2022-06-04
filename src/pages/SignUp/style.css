@@ -1,10 +1,12 @@
 .container {
 	display: flex;
+	min-width: 100vw;
 	min-height: 100vh;
 }
 
 .div-register {
-	width: 66%;
+	display: flex;
+	min-width: 60vw;
 }
 
 .footer-menu-title {
@@ -20,6 +22,10 @@ span.pink {
 	text-decoration: underline;
 }
 
+a {
+	text-decoration: none;
+}
+
 .lines {
 	display: flex;
 	justify-content: center;
@@ -27,10 +33,12 @@ span.pink {
 	gap: 8px;
 }
 
-a {
-	text-decoration: none;
-}
+@media (max-width: 1024px) {
+	.lines {
+		margin-top: 8.5rem;
+	}
 
-.white {
-	color: #f8f8f9;
+	.div-register {
+		min-width: 55vw;
+	}
 }

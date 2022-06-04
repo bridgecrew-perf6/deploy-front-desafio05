@@ -13,8 +13,11 @@ function Inputs({ type, name, label, id, value, handleChangeForm, placeholder, s
                 placeholder={placeholder}
                 style= {style}
             />
-        </div>
+	    {error && (
+				<span className='font-form-error align-form-error'>{error}</span>
+			)}
+		</div>
     )
 }
 
-export default Inputs
+export default Inputs;
