@@ -1,6 +1,6 @@
 import "./style.css";
 
-function Inputs({ type, name, label, id, value, handleChangeForm, placeholder, style }) {
+function Inputs({ type, name, label, id, value, handleChangeForm }) {
     return (
         <div className="column">
              <label className="data-label" htmlFor={id}>{label}</label>
@@ -10,8 +10,6 @@ function Inputs({ type, name, label, id, value, handleChangeForm, placeholder, s
                 id={id}
                 value={value}
                 onChange={(e) => handleChangeForm(e)}
-                placeholder={placeholder}
-                style= {style}
             />
         </div>
     )

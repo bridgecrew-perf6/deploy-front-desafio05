@@ -14,6 +14,14 @@
 	margin-top: 19px;
 }
 
+.menu-title {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.6rem;
+	line-height: 2.2rem;
+	color: #343447;
+}
+
 span.pink {
 	color: #da0175;
 	margin-left: 3px;
@@ -23,8 +31,8 @@ span.pink {
 .lines {
 	display: flex;
 	justify-content: center;
-	margin-top: 25rem;
 	gap: 8px;
+	margin-top: 27.6rem;
 }
 
 a {
@@ -33,4 +41,9 @@ a {
 
 .white {
 	color: #f8f8f9;
+}
+
+.center-form {
+	display: flex;
+	flex-direction: column;
 }
