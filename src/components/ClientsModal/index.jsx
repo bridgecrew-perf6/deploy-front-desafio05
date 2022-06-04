@@ -8,6 +8,8 @@ import { useState } from "react";
 function ClientsModal({ open, handleClose }) {
     const [form, setForm] = useState({ name: '', email: '', cpf: '', phone: '', address: '', complement: '', cep: '', district: '', city: '', uf: ''})
 
+    // atualizar
+
     async function handleSubmit(e) {
         e.preventDefaul()
         try {
