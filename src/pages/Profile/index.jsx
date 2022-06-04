@@ -97,7 +97,7 @@ function Profile() {
 
 	return (
 		<div className='container-profile'>
-			<navbar className='container-navbar-items'>
+			<nav className='container-navbar-items'>
 				<NavLink image={HomeImg} text='Home' color='main-pink' />
 				<NavLink
 					image={ProfileImg}
@@ -111,7 +111,7 @@ function Profile() {
 					color='color-navbar-text-default'
 					display='hidden'
 				/>
-			</navbar>
+			</nav>
 
 			<div className='container-profile-dashboard'>
 				<div className='container-profile-user'>

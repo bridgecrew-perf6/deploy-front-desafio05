@@ -1,6 +1,6 @@
 import "./style.css";
 
-function Inputs({ type, name, label, id, value, handleChangeForm, placeholder, style }) {
+function Inputs({ type, name, label, id, value, handleChangeForm, placeholder, style, error }) {
     return (
         <div className="column">
              <label className="data-label" htmlFor={id}>{label}</label>

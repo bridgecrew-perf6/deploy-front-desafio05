@@ -27,7 +27,7 @@ function ClientsModal({ open, handleClose }) {
 
     function handleChangeForm(e) {
         const value = e.target.value;
-        setForms({
+        setForm({
             ...form,
             [e.target.name]: value,
         });
@@ -60,11 +60,12 @@ function ClientsModal({ open, handleClose }) {
                     <div className="container">
                         <div className="container-header">
                             <div className="theme-modal">
-                                <img src={People} />
+                                <img src={People} alt=""/>
                                 <h3>Cadastro do Cliente</h3>
                             </div>
                             <img
-                                src={Close}
+                                src={Close} 
+                                alt=""
                                 onClick={() => handleClose()}
                             />
                         </div>
