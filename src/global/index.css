@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap");
 
-/* margin padding font REM */
-/* width height px*/
+/* reset css */
 
 #root {
 	min-height: 100vh;
@@ -87,13 +86,15 @@ body {
 	color: #f8f8f9;
 }
 
-.ai-center {
-	align-items: center;
+.table-charge-title {
+	font-family: "Montserrat";
+	font-weight: 600;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	color: #3f3f55;
 }
 
-.mg-left-24 {
-	margin-left: 24px;
-}
+/* pre-confs */
 
 .column {
 	display: flex;
@@ -104,10 +105,34 @@ body {
 	display: flex;
 }
 
+.ai-center {
+	align-items: center;
+}
+
+.mg-left-24 {
+	margin-left: 24px;
+}
+
 .jc-center {
 	justify-content: center;
 }
 
+.jc-space-between {
+	justify-content: space-between;
+}
+
 .ai-center {
 	align-items: center;
+}
+
+.main-pink {
+	color: #da0175;
+}
+
+.color-navbar-text-default {
+	color: #343447;
+}
+
+.ai-baseline {
+	align-items: baseline;
 }
