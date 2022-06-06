@@ -40,7 +40,7 @@ function SignIn() {
 		const token = getItem("token");
 
 		if (token) {
-			navigate("/profile");
+			navigate("/home");
 		}
 	});
 
@@ -53,7 +53,7 @@ function SignIn() {
 
 			const { token } = response.data;
 			setItem("token", token);
-			navigate("/profile");
+			navigate("/home");
 		} catch (error) {
 			console.log(error.message);
 		}

@@ -8,17 +8,33 @@ import Order from "../../assets/order.svg";
 import Charge from "../../assets/charge.svg"
 import "./style.css";
 import ClientsModal from "../../components/ClientsModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
+import api from "../../services/api"
 
 function Clients() {
 	const [openClientsModal, setOpenClientsModal] = useState(false)
+	const [clients, setClients] = useState();
 
-	function handleEditClient() {setOpenClientsModal(true)}
+	useEffect(() => {
+		async function handleGetClients() {
+			try {
+				const response = await api.get("/clients");
+
+				setClients(response.data);
+			} catch (error) {
+				console.log(error.message)
+			}
+		}
+		handleGetClients();
+	}, []);
 
 	return (
 		<div className='row'>
 			<div className='column ai-center gap-nav-items'>
-				<NavLink image={HomeImg} text='Home' color='main-pink' />
+				<Link to="/home">
+					<NavLink image={HomeImg} text='Home' color='main-pink' />
+				</Link>
 				<NavLink
 					image={ProfileImg}
 					text='Clientes'
@@ -45,7 +61,7 @@ function Clients() {
 				<div className="client-area">
 					<div className="client-area-header">
 						<div className="theme">
-							<img src={People} />
+							<img src={People} alt="" />
 							<h3>Clientes</h3>
 						</div>
 						<div className="customer-interaction">
@@ -54,22 +70,18 @@ function Clients() {
 							>
 								+Adicionar cliente
 							</button>
-							<img src={Filter} />
+							<img src={Filter} alt="" />
 							<input
 								placeholder="Pesquisa"
 							//imagem da lupa
 							/>
 						</div>
 					</div>
-					<ClientsModal
-						open={openClientsModal}
-						handleClose={() => setOpenClientsModal(false)}
-					/>
 					<div className="line-with-titles">
 						<table>
 							<thead>
 								<tr>
-									<th className="center-order"><img src={Order} />Cliente</th>
+									<th className="center-order"><img src={Order} alt="" />Cliente</th>
 									<th>CPF</th>
 									<th>E-mail</th>
 									<th>Telefone</th>
@@ -77,19 +89,24 @@ function Clients() {
 									<th>Criar Cobrança</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>Sara da Silva</td>
-									<td>054 356 255 87</td>
-									<td>sarasilva@cubos.io</td>
-									<td>71 9 9462 8654</td>
-									<td className="status">Inadiplente</td>
-									<td><img src={Charge} /></td>
-								</tr>
-							</tbody>
+							{clients &&
+								clients.map((cliente) => (
+									<tbody key={cliente.id}>
+										<tr>
+											<td>{cliente.name}</td>
+											<td>{cliente.cpf}</td>
+											<td>{cliente.email}</td>
+											<td>{cliente.phone}</td>
+											<td className="status">Inadiplente</td>
+											<td><img src={Charge} alt="" /></td>
+										</tr>
+									</tbody>
+								))}
 						</table>
 					</div>
-
+					{openClientsModal && <ClientsModal
+						handleClose={() => setOpenClientsModal(false)}
+					/>}					
 
 				</div>
 

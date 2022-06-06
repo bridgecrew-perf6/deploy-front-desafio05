@@ -5,25 +5,20 @@ import api from "../../services/api"
 import './style.css';
 import { useState } from "react";
 
-function ClientsModal({ open, handleClose }) {
-    const [form, setForm] = useState({ name: '', email: '', cpf: '', phone: '', address: '', complement: '', cep: '', district: '', city: '', uf: ''})
-
-    // atualizar
-
-    async function handleSubmit(e) {
-        e.preventDefaul()
-        try {
-            if (!form.name || !form.email || !form.cpf || !form.phone) {
-                return;
-            }
-            const response = await api.post('/registerClient', {
-                ...form
-            });
-        } catch (error) {
-            console.log(error)
-        } 
-
-    }
+function ClientsModal({ handleClose }) {
+    const [form, setForm] = useState(
+        {
+            name: '',
+            email: '',
+            cpf: '',
+            phone: '',
+            cep: '',
+            address: '',
+            complement: '',
+            district: '',
+            city: '',
+            state: ''
+        });
 
     function handleChangeForm(e) {
         const value = e.target.value;
@@ -33,38 +28,48 @@ function ClientsModal({ open, handleClose }) {
         });
     }
 
-    async function handleApi() {
-        try {
-            const response = await api.post("/clients", {
-                name: form.name,
-                email: form.email,
-                cpf: form.cpf,
-                phone: form.phone,
-                address: form.address, 
-                complement: form.complement, 
-                cep: form.cep,
-                district: form.district,
-                city: form.city,
-                uf: form.uf 
-            });
 
+    async function handleSubmit(e) {
+        e.preventDefault()
+        if (!form.name || !form.email || !form.cpf || !form.phone) {
+            console.log('campos obrigatórios');
+            return;
+        }
+        console.log(form)
+        try {
+            const response = await api.post('/client',
+                {
+                    name: form.name,
+                    email: form.email,
+                    cpf: form.cpf,
+                    phone: form.phone,
+                    cep: form.cep,
+                    address: form.address,
+                    complement: form.complement,
+                    district: form.district,
+                    city: form.city,
+                    state: form.state
+                });
+            
             console.log(response);
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
         }
+
     }
+
     return (
         <>
-            {open &&
+         
                 <div className="register-clients">
                     <div className="container">
                         <div className="container-header">
                             <div className="theme-modal">
-                                <img src={People} alt=""/>
+                                <img src={People} alt="" />
                                 <h3>Cadastro do Cliente</h3>
                             </div>
                             <img
-                                src={Close} 
+                                src={Close}
                                 alt=""
                                 onClick={() => handleClose()}
                             />
@@ -170,7 +175,7 @@ function ClientsModal({ open, handleClose }) {
 
                                 <Inputs
                                     type="text"
-                                    name="uf"
+                                    name="state"
                                     label="UF"
                                     id="uf"
                                     placeholder="Digite a UF"
@@ -181,12 +186,11 @@ function ClientsModal({ open, handleClose }) {
 
                             <div className="buttons">
                                 <button className="cancel">Cancelar</button>
-                                <button className="apply">Aplicar</button>
+                                <button type="submit" className="apply">Aplicar</button>
                             </div>
                         </form>
                     </div>
                 </div>
-            }
         </>
     )
 }

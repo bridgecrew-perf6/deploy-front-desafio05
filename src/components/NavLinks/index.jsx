@@ -1,6 +1,6 @@
 import "./style.css";
 
-function NavLink({ image, text, color, display }) {
+function NavLink({ image, text, color, display}) {
 	return (
 		<div className='container-navlink'>
 			<div className='container-items'>

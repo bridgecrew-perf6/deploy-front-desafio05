@@ -12,6 +12,7 @@ import CardCharge from "../../components/CardCharge";
 import NavLink from "../../components/NavLinks";
 import TableCharge from "../../components/TableCharge";
 import TableClients from "../../components/TableClients";
+import {Link} from "react-router-dom"
 import "./style.css";
 
 function Profile() {
@@ -99,12 +100,14 @@ function Profile() {
 		<div className='container-profile'>
 			<nav className='container-navbar-items'>
 				<NavLink image={HomeImg} text='Home' color='main-pink' />
-				<NavLink
-					image={ProfileImg}
-					text='Clientes'
-					color='color-navbar-text-default'
-					display='hidden'
-				/>
+				<Link to='/clientes'>
+					<NavLink
+						image={ProfileImg}
+						text='Clientes'
+						color='color-navbar-text-default'
+						display='hidden'
+					/>
+				</Link>
 				<NavLink
 					image={DocumentImg}
 					text='Cobranças'
