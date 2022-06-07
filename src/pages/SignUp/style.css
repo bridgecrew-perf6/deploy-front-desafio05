@@ -40,7 +40,7 @@ a {
 	gap: 8px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
 	.lines {
 		margin-top: 8.5rem;
 	}

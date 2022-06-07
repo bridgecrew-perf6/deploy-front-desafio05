@@ -16,10 +16,10 @@ function mainRoutes() {
 		<Routes>
 			<Route path='/' element={<SignUp />} />
 			<Route path='/login' element={<SignIn />} />
-			<Route element={<ProtectedRoutes redirectTo='/' />}>
+			<Route element={<ProtectedRoutes redirectTo='/login' />}>
 				<Route path='/home' element={<Profile />} />
 			</Route>
-			<Route element={<ProtectedRoutes redirectTo='/' />}>
+			<Route element={<ProtectedRoutes redirectTo='/login' />}>
 				<Route path='/clientes' element={<Clients />} />
 			</Route>
 		</Routes>
