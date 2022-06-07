@@ -172,14 +172,16 @@ header p {
 }
 
 .status {
-	width: 99px;
-	height: 5px;
-
-	padding: 0px 8px;
 	gap: 4px;
-
+	padding: 2px 8px;
 	background: #ffefef;
 	border-radius: 8px;
+
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 19px;
+	color: #971d1d;
 }
 
 .line-with-titles table td img {

@@ -111,7 +111,9 @@ function Clients() {
 											<td>{cliente.cpf}</td>
 											<td>{cliente.email}</td>
 											<td>{cliente.phone}</td>
-											<td className='status'>Inadiplente</td>
+											<td>
+												<span className='status'>Inadimplente</span>
+											</td>
 											<td>
 												<img src={Charge} alt='' />
 											</td>
