@@ -1,24 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&family=Nunito:wght@400;600;700&display=swap');
 
-body {
-    width: 100%;
-    height: 100%;
-}
-
 .centralize {
-    margin-left: 45px;
+    width: 100%;
 
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
 header {
-    width: 1268px;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 108px 0 60px;
+    margin-top: 54px;
+    width: 100%;
 }
 
 header p {
@@ -29,18 +24,24 @@ header p {
     color: #0E8750;
 }
 
-.id {
-    display: flex;
-    align-items: center;
+.container-clients-margin{
+    margin-bottom: 24px;
 }
 
+.hr-clients {
+    margin: 4px 32px 24px 32px;
+    color: #acd9c5;
+    background-color: #acd9c5;
+    border: 1px solid #acd9c5;
+}
+
+
 .client-area {
-    width: 1268px;
-    border-top: 2px solid rgba(172, 217, 197, 1);
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .client-area-header {
@@ -118,6 +119,21 @@ header p {
     color: #747488;
 }
 
+.customer-interaction .img-insert{
+    position: relative;
+
+    display: flex;
+}
+
+.customer-interaction .img-insert .img-position{
+    width: 24px;
+    height: 24px;
+
+    position:absolute;
+    
+ 
+}
+
 .line-with-titles table {
     width: 1116px;
 
@@ -158,14 +174,14 @@ header p {
 
 }
 
-.line-with-titles table th img{
+.line-with-titles table th img {
     width: 22.5px;
     height: 20px;
 
     margin-right: 5px;
 }
 
-.center-order{
+.center-order {
     display: flex;
     align-items: center;
 }
@@ -183,7 +199,7 @@ header p {
     color: #747488;
 }
 
-.status{
+.status {
     width: 99px;
     height: 5px;
 
@@ -194,7 +210,7 @@ header p {
     border-radius: 8px;
 }
 
-.line-with-titles table td img{
+.line-with-titles table td img {
     width: 35px;
     height: 35px;
 }

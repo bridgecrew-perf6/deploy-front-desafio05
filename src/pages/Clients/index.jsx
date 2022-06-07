@@ -1,16 +1,22 @@
 import DocumentImg from "../../assets/documents.svg";
-import HomeImg from "../../assets/home.svg";
-import ProfileImg from "../../assets/profile.svg";
+import HomeInactve from "../../assets/home-inactve.svg";
+import ClientsPink from "../../assets/clients-pink.svg";
 import NavLink from "../../components/NavLinks";
 import People from "../../assets/people.svg";
 import Filter from "../../assets/filter.svg";
 import Order from "../../assets/order.svg";
-import Charge from "../../assets/charge.svg"
+import Charge from "../../assets/charge.svg";
 import "./style.css";
 import ClientsModal from "../../components/ClientsModal";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"
-import api from "../../services/api"
+import { Link } from "react-router-dom";
+import api from "../../services/api";
+import Login from "../../components/Login";
+import ImgProfile from "../../assets/img-profile.png";
+import ArrowImg from "../../assets/arrow.svg";
+import ImgEdit from "../../assets/to-edit.svg";
+import ImgLogout from "../../assets/exit.svg";
+import Search from "../../assets/search.svg"
 
 function Clients() {
 	const [openClientsModal, setOpenClientsModal] = useState(false)
@@ -31,15 +37,19 @@ function Clients() {
 
 	return (
 		<div className='row'>
-			<div className='column ai-center gap-nav-items'>
-				<Link to="/home">
-					<NavLink image={HomeImg} text='Home' color='main-pink' />
+			<nav className='container-navbar-items'>
+				<Link to='/home'>
+					<NavLink
+						image={HomeInactve}
+						text='Home'
+						color='color-navbar-text-default'
+						display='hidden'
+					/>
 				</Link>
 				<NavLink
-					image={ProfileImg}
+					image={ClientsPink}
 					text='Clientes'
-					color='color-navbar-text-default'
-					display='hidden'
+					color='main-pink'
 				/>
 				<NavLink
 					image={DocumentImg}
@@ -47,16 +57,23 @@ function Clients() {
 					color='color-navbar-text-default'
 					display='hidden'
 				/>
-			</div>
+			</nav>
 
 			<div className="centralize">
 				<header>
 					<p>Clientes</p>
-					<div className="id">
-						<div className="initials">LR</div>
-						<p>Lorena</p>
+					<div className="container-clients-margin">
+						<Login
+							image={ImgProfile}
+							imageArrow={ArrowImg}
+							imageEdit={ImgEdit}
+							imageLogout={ImgLogout}
+						/>
 					</div>
+
 				</header>
+
+				<hr className="hr-clients" />
 
 				<div className="client-area">
 					<div className="client-area-header">
@@ -71,10 +88,10 @@ function Clients() {
 								+Adicionar cliente
 							</button>
 							<img src={Filter} alt="" />
-							<input
-								placeholder="Pesquisa"
-							//imagem da lupa
-							/>
+							<div className="img-insert">
+								<input placeholder="Pesquisa"/>
+								<img className="img-position" src={Search} />
+							</div>
 						</div>
 					</div>
 					<div className="line-with-titles">
@@ -106,7 +123,7 @@ function Clients() {
 					</div>
 					{openClientsModal && <ClientsModal
 						handleClose={() => setOpenClientsModal(false)}
-					/>}					
+					/>}
 
 				</div>
 
