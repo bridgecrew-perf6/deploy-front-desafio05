@@ -1,0 +1,29 @@
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.container-box {
+	display: flex;
+	align-items: center;
+}
+
+.container-arrow {
+	position: relative;
+}
+.container-arrow-position {
+	display: flex;
+	position: absolute;
+	left: -54px;
+	top: -1px;
+	background: url("../../assets/float-box.svg");
+	width: 150px;
+	height: 150px;
+}
+
+.container-arrow-items {
+	display: flex;
+	position: absolute;
+	left: 55px;
+	top: 45px;
+	gap: 20px;
+}

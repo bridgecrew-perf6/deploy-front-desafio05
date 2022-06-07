@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ArrowImg from "../../assets/arrow.svg";
 import ClientDanger from "../../assets/client-danger.svg";
 import ClientSuccess from "../../assets/client-success.svg";
@@ -5,14 +6,16 @@ import DocumentImgCaution from "../../assets/document-caution.svg";
 import DocumentImgDanger from "../../assets/document-danger.svg";
 import DocumentImgSuccess from "../../assets/document-success.svg";
 import DocumentImg from "../../assets/documents.svg";
+import ImgLogout from "../../assets/exit.svg";
 import HomeImg from "../../assets/home.svg";
 import ImgProfile from "../../assets/img-profile.png";
 import ProfileImg from "../../assets/profile.svg";
+import ImgEdit from "../../assets/to-edit.svg";
 import CardCharge from "../../components/CardCharge";
+import Login from "../../components/Login";
 import NavLink from "../../components/NavLinks";
 import TableCharge from "../../components/TableCharge";
 import TableClients from "../../components/TableClients";
-import {Link} from "react-router-dom"
 import "./style.css";
 
 function Profile() {
@@ -119,11 +122,12 @@ function Profile() {
 			<div className='container-profile-dashboard'>
 				<div className='container-profile-user'>
 					<h1 className='title-main-table'>Resumo de cobranças</h1>
-					<div className='row ai-center profile-gap'>
-						<img src={ImgProfile} alt='' />
-						<span className='font-profile'>Lorena</span>
-						<img src={ArrowImg} alt='' />
-					</div>
+					<Login
+						image={ImgProfile}
+						imageArrow={ArrowImg}
+						imageEdit={ImgEdit}
+						imageLogout={ImgLogout}
+					/>
 				</div>
 				<hr className='divisor-profile' />
 

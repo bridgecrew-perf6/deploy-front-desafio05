@@ -1,4 +1,4 @@
-.container {
+.container-sign-up {
 	display: flex;
 	min-width: 100vw;
 	min-height: 100vh;
@@ -30,6 +30,13 @@ a {
 	display: flex;
 	justify-content: center;
 	margin-top: 25rem;
+	gap: 8px;
+}
+
+.lines-final {
+	display: flex;
+	justify-content: center;
+	margin-top: 6rem;
 	gap: 8px;
 }
 

@@ -68,38 +68,36 @@ function SignIn() {
 	}
 
 	return (
-		<div className='container'>
+		<div className='row'>
 			<img className='img-position' src={Image} alt='' />
-			<form className='div-register' onSubmit={handleSubmitLogin}>
-				<div className='center-form'>
-					<CardSignUp header='Faça seu login!'>
-						<Inputs
-							type='email'
-							name='email'
-							label='E-mail'
-							id='email'
-							value={forms.email}
-							handleChangeForm={handleChangeForm}
-							error={errorEmail}
-						/>
-						<Inputs
-							type='password'
-							name='password'
-							label='Senha'
-							id='password'
-							value={forms.password}
-							handleChangeForm={handleChangeForm}
-							error={errorPassword}
-						/>
-					</CardSignUp>
-					<Btn type='submit' text='Continuar' />
+			<form className='container-sign-in' onSubmit={handleSubmitLogin}>
+				<CardSignUp header='Faça seu login!'>
+					<Inputs
+						type='email'
+						name='email'
+						label='E-mail'
+						id='email'
+						value={forms.email}
+						handleChangeForm={handleChangeForm}
+						error={errorEmail}
+					/>
+					<Inputs
+						type='password'
+						name='password'
+						label='Senha'
+						id='password'
+						value={forms.password}
+						handleChangeForm={handleChangeForm}
+						error={errorPassword}
+					/>
+				</CardSignUp>
+				<Btn type='submit' text='Continuar' />
 
-					<div className='footer-menu-title'>
-						<h1 className='menu-title'>Ainda não possui uma conta? Faça seu</h1>
-						<Link to='/'>
-							<span className='pink menu-title'>Cadastre-se</span>
-						</Link>
-					</div>
+				<div className='footer-menu-title'>
+					<h1 className='menu-title'>Ainda não possui uma conta? Faça seu</h1>
+					<Link to='/'>
+						<span className='pink menu-title '>Cadastre-se</span>
+					</Link>
 				</div>
 			</form>
 		</div>

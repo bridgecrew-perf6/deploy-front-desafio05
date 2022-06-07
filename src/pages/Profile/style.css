@@ -6,7 +6,7 @@ body {
 	display: flex;
 }
 
-navbar {
+nav {
 	display: flex;
 	min-height: 100vh;
 	width: 10.8rem;
@@ -20,6 +20,7 @@ navbar {
 	align-items: center;
 	padding: 0 108px 0 60px;
 	margin-top: 54px;
+	width: 100%;
 }
 
 .divisor-profile {

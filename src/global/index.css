@@ -155,3 +155,7 @@ body {
 .wrap {
 	flex-wrap: wrap;
 }
+
+.span-white {
+	color: #ffffff;
+}

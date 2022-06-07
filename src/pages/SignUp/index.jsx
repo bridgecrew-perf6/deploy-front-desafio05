@@ -150,7 +150,7 @@ function SignUp() {
 	}
 
 	return (
-		<div className='container'>
+		<div className='container-sign-up'>
 			<Stepper obj={obj} countState={countState} />
 
 			{login.infos ? (
@@ -246,11 +246,11 @@ function SignUp() {
 							type='submit'
 							text={
 								<Link to='/login'>
-									<span className='white'>Ir para Login</span>
+									<span className='span-white'>Ir para Login</span>
 								</Link>
 							}
 						/>
-						<div className='lines'>
+						<div className='lines-final'>
 							<img src={LineWhite} alt='' />
 							<img src={LineWhite} alt='' />
 							<img src={LineGreen} alt='' />
