@@ -1,216 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&family=Nunito:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&family=Nunito:wght@400;600;700&display=swap");
 
-.centralize {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
+.clients-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 108px 0 60px;
-    margin-top: 54px;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 0 108px 0 60px;
+	margin-top: 54px;
 }
 
 header p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #0E8750;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #0e8750;
 }
 
-.container-clients-margin{
-    margin-bottom: 24px;
+.container-clients-margin {
+	margin-bottom: 24px;
 }
 
 .hr-clients {
-    margin: 4px 32px 24px 32px;
-    color: #acd9c5;
-    background-color: #acd9c5;
-    border: 1px solid #acd9c5;
+	margin: 4px 32px 24px 32px;
+	color: #acd9c5;
+	background-color: #acd9c5;
+	border: 1px solid #acd9c5;
 }
-
 
 .client-area {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.client-area-header {
-    width: 1123px;
-
-    margin-top: 30px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+.clients-container-area-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 1123px;
 }
 
 .theme {
-    width: 134px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
 }
 
 .theme img {
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
 }
 
 .theme h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 26px;
-    color: #3F3F55;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	color: #3f3f55;
 }
 
 .customer-interaction {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
 }
 
 .customer-interaction button {
-    width: 266px;
-    height: 33px;
+	width: 266px;
+	padding: 4px 0;
+	background: #da0175;
+	border-radius: 10px;
+	border-style: none;
 
-    background: #DA0175;
-    border-radius: 10px;
-    border-style: none;
-
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
-    color: #F8F8F9;
-
-}
-
-.customer-interaction img {
-    width: 40px;
-    height: 40px;
-    margin: 0px 16px 0px 16px;
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #f8f8f9;
 }
 
 .customer-interaction input {
-    width: 266px;
-    height: 33px;
-
-    padding-left: 15px;
-
-    border-radius: 10px;
-    border-style: none;
-
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
-    color: #747488;
+	width: 266px;
+	padding: 7px 0;
+	padding-left: 15px;
+	border-radius: 10px;
+	border-style: none;
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #747488;
 }
 
-.customer-interaction .img-insert{
-    position: relative;
-
-    display: flex;
+.clients-container-relative {
+	position: relative;
 }
-
-.customer-interaction .img-insert .img-position{
-    width: 24px;
-    height: 24px;
-
-    position:absolute;
-    
- 
+.clients-container-relative img {
+	position: absolute;
+	top: 7px;
+	right: 10px;
 }
 
 .line-with-titles table {
-    width: 1116px;
+	width: 1116px;
 
-    display: table;
+	display: table;
 
-    border-collapse: separate;
-    text-align: center;
+	border-collapse: separate;
+	text-align: center;
 
-    margin-top: 31px;
-    padding: 12px 24.5px 20px 24.5px;
+	margin-top: 31px;
+	padding: 12px 24.5px 20px 24.5px;
 
-    background: #FFFFFF;
-    border-radius: 30px;
+	background: #ffffff;
+	border-radius: 30px;
 }
 
 .line-with-titles table thead {
-    display: table-header-group;
+	display: table-header-group;
 }
 
 .line-with-titles table thead tr {
-    display: table-row;
-
+	display: table-row;
 }
 
 .line-with-titles table tbody {
-    display: table-row-group;
-
+	display: table-row-group;
 }
 
 .line-with-titles table th {
-    display: table-cell;
+	display: table-cell;
 
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 50px;
-    color: #3F3F55;
-
+	font-family: "Nunito", sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 50px;
+	color: #3f3f55;
 }
 
 .line-with-titles table th img {
-    width: 22.5px;
-    height: 20px;
+	width: 22.5px;
+	height: 20px;
 
-    margin-right: 5px;
+	margin-right: 5px;
 }
 
 .center-order {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .line-with-titles table td {
-    display: table-cell;
+	display: table-cell;
 
-    padding-top: 8px;
-    border-top: 1px solid rgba(239, 240, 246, 1);
+	padding-top: 8px;
+	border-top: 1px solid rgba(239, 240, 246, 1);
 
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #747488;
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #747488;
 }
 
 .status {
-    width: 99px;
-    height: 5px;
+	width: 99px;
+	height: 5px;
 
-    padding: 0px 8px;
-    gap: 4px;
+	padding: 0px 8px;
+	gap: 4px;
 
-    background: #FFEFEF;
-    border-radius: 8px;
+	background: #ffefef;
+	border-radius: 8px;
 }
 
 .line-with-titles table td img {
-    width: 35px;
-    height: 35px;
+	width: 35px;
+	height: 35px;
 }
