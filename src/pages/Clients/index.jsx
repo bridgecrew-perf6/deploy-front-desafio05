@@ -15,11 +15,13 @@ import ImgEdit from "../../assets/to-edit.svg";
 import ClientsModal from "../../components/ClientsModal";
 import Login from "../../components/Login";
 import NavLink from "../../components/NavLinks";
+import ProfileModal from "../../components/ProfileModal";
 import api from "../../services/api";
 import "./style.css";
 
 function Clients() {
 	const [openClientsModal, setOpenClientsModal] = useState(false);
+	const [openProfileModal, setOpenProfileModal] = useState(false);
 	const [clients, setClients] = useState();
 
 	useEffect(() => {
@@ -64,6 +66,7 @@ function Clients() {
 							imageArrow={ArrowImg}
 							imageEdit={ImgEdit}
 							imageLogout={ImgLogout}
+							setOpenProfileModal={setOpenProfileModal}
 						/>
 					</div>
 				</header>
@@ -124,6 +127,9 @@ function Clients() {
 					</div>
 					{openClientsModal && (
 						<ClientsModal handleClose={() => setOpenClientsModal(false)} />
+					)}
+					{openProfileModal && (
+						<ProfileModal handleClose={() => setOpenProfileModal(false)} />
 					)}
 				</div>
 			</div>
