@@ -99,7 +99,7 @@ function SignIn() {
 
 				<div className='footer-menu-title'>
 					<h1 className='menu-title'>Ainda não possui uma conta? Faça seu</h1>
-					<Link to='/'>
+					<Link to='/cadastro'>
 						<span className='pink menu-title '>Cadastre-se</span>
 					</Link>
 				</div>

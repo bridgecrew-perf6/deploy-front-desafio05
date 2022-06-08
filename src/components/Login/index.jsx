@@ -10,7 +10,7 @@ function Profile({ image, imageArrow, imageEdit, imageLogout }) {
 	function handleLogOut() {
 		try {
 			setItem("token", "");
-			navigate("/login");
+			navigate("/");
 		} catch (error) {
 			console.log(error.message);
 		}

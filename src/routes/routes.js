@@ -14,12 +14,12 @@ function mainRoutes() {
 	}
 	return (
 		<Routes>
-			<Route path='/' element={<SignUp />} />
-			<Route path='/login' element={<SignIn />} />
-			<Route element={<ProtectedRoutes redirectTo='/login' />}>
+			<Route path='/' element={<SignIn />} />
+			<Route path='/cadastro' element={<SignUp />} />
+			<Route element={<ProtectedRoutes redirectTo='/' />}>
 				<Route path='/home' element={<Profile />} />
 			</Route>
-			<Route element={<ProtectedRoutes redirectTo='/login' />}>
+			<Route element={<ProtectedRoutes redirectTo='/' />}>
 				<Route path='/clientes' element={<Clients />} />
 			</Route>
 		</Routes>

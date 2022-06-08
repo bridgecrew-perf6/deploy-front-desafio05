@@ -188,7 +188,7 @@ function SignUp() {
 
 						<div className='footer-menu-title'>
 							<h1 className='menu-title'>Já possui uma conta? Faça seu</h1>
-							<Link to='/login'>
+							<Link to='/'>
 								<span className='pink menu-title'>Login</span>
 							</Link>
 						</div>
@@ -205,7 +205,7 @@ function SignUp() {
 						<CardSignUp
 							header='Escolha uma senha'
 							footer={
-								<Link to='/login'>
+								<Link to='/'>
 									Já possui uma conta? Faça seu <span>Login</span>
 								</Link>
 							}
@@ -248,7 +248,7 @@ function SignUp() {
 						<Btn
 							type='submit'
 							text={
-								<Link to='/login'>
+								<Link to='/'>
 									<span className='span-white'>Ir para Login</span>
 								</Link>
 							}
