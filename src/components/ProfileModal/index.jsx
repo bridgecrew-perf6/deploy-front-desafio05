@@ -6,6 +6,13 @@ import Inputs from "../Inputs";
 import "./style.css";
 
 function ProfileModal({ handleClose }) {
+	const [errorName, setErrorName] = useState("");
+	const [errorEmail, setErrorEmail] = useState("");
+	const [errorPassword, setErrorPassword] = useState("");
+	const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
+	const [errorCpf, setErrorCpf] = useState("");
+	const [errorPhone, setErrorPhone] = useState("");
+
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
@@ -25,20 +32,40 @@ function ProfileModal({ handleClose }) {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		if (
-			!form.name ||
-			!form.email ||
-			!form.cpf ||
-			!form.phone ||
-			!form.password ||
-			!form.confirmPassword
-		) {
-			console.log("campos obrigatórios");
+		if (!form.name) {
+			setErrorName("O campo nome é obrigatório");
 			return;
 		}
+		setErrorName("");
+		if (!form.email) {
+			setErrorEmail("O campo e-mail é obrigatório");
+			return;
+		}
+		setErrorEmail("");
+		if (!form.cpf) {
+			setErrorCpf("O campo CPF é obrigatório");
+			return;
+		}
+		setErrorCpf("");
+		if (!form.phone) {
+			setErrorPhone("O campo telefone é obrigatório");
+			return;
+		}
+		setErrorPhone("");
+		if (!form.password) {
+			setErrorPassword("O campo senha é obrigatório");
+			return;
+		}
+		setErrorPassword("");
+		if (!form.confirmPassword) {
+			setErrorConfirmPassword("O campo confirmar senha é obrigatório");
+			return;
+		}
+		setErrorConfirmPassword("");
+
 		console.log(form);
 		try {
-			const response = await api.post("/client", {
+			const response = await api.put("/user", {
 				name: form.name,
 				email: form.email,
 				password: form.password,
@@ -70,6 +97,7 @@ function ProfileModal({ handleClose }) {
 						label='Nome*'
 						id='name'
 						placeholder='Digite o nome'
+						error={errorName}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -80,6 +108,7 @@ function ProfileModal({ handleClose }) {
 						label='E-mail*'
 						id='email'
 						placeholder='Digite seu e-mail'
+						error={errorEmail}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -90,6 +119,7 @@ function ProfileModal({ handleClose }) {
 							label='CPF*'
 							id='cpf'
 							placeholder='Digite o CPF'
+							error={errorCpf}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 							mask='999.999.999-99'
@@ -101,6 +131,7 @@ function ProfileModal({ handleClose }) {
 							label='Telefone*'
 							id='phone'
 							placeholder='Digite o telefone'
+							error={errorPhone}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 							mask='(99) 9999-9999'
@@ -112,6 +143,7 @@ function ProfileModal({ handleClose }) {
 						label='Nova Senha*'
 						id='password'
 						placeholder='••••••••'
+						error={errorPassword}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -122,6 +154,7 @@ function ProfileModal({ handleClose }) {
 						label='Confirmar Senha*'
 						id='confirmPassword'
 						placeholder='••••••••'
+						error={errorConfirmPassword}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
