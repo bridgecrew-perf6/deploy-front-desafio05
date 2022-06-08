@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ImgEye from "../../assets/reveal-password.svg";
 import Image from "../../assets/sign-in-img.png";
 import Btn from "../../components/Btn";
 import CardSignUp from "../../components/CardSignUp";
@@ -77,6 +78,7 @@ function SignIn() {
 						name='email'
 						label='E-mail'
 						id='email'
+						placeholder='Digite seu e-mail'
 						value={forms.email}
 						handleChangeForm={handleChangeForm}
 						error={errorEmail}
@@ -86,9 +88,11 @@ function SignIn() {
 						name='password'
 						label='Senha'
 						id='password'
+						placeholder='Digite sua senha'
 						value={forms.password}
 						handleChangeForm={handleChangeForm}
 						error={errorPassword}
+						reveal={ImgEye}
 					/>
 				</CardSignUp>
 				<Btn type='submit' text='Continuar' />

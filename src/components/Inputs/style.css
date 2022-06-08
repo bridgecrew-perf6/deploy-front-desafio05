@@ -30,3 +30,14 @@ label.data-label {
 .danger-border-error:active {
 	border: 1px solid red;
 }
+
+.container-component-input {
+	display: flex;
+	position: relative;
+}
+
+.component-position-img {
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}

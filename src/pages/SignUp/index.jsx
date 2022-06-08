@@ -5,6 +5,7 @@ import LineGreen from "../../assets/line-green.svg";
 import LineWhite from "../../assets/line-white.svg";
 import PointedGreen from "../../assets/point-green.svg";
 import PointedWhite from "../../assets/point-white.svg";
+import ImgEye from "../../assets/reveal-password.svg";
 import Btn from "../../components/Btn";
 import CardSignUp from "../../components/CardSignUp";
 import CardSucess from "../../components/CardSucess";
@@ -218,6 +219,7 @@ function SignUp() {
 								value={forms.password}
 								handleChangeForm={handleChangeForm}
 								error={errorPassword}
+								reveal={ImgEye}
 							/>
 							<Inputs
 								type='password'
@@ -228,6 +230,7 @@ function SignUp() {
 								value={forms.confirmPassword}
 								handleChangeForm={handleChangeForm}
 								error={errorConfirmPassword}
+								reveal={ImgEye}
 							/>
 						</CardSignUp>
 						<Btn type='submit' text='Entrar' />

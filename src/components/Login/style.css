@@ -1,5 +1,6 @@
 .cursor-pointer {
 	cursor: pointer;
+	z-index: 2;
 }
 
 .container-box {
@@ -11,10 +12,9 @@
 	position: relative;
 }
 .container-arrow-position {
-	display: flex;
 	position: absolute;
 	left: -54px;
-	top: -1px;
+	top: 15px;
 	background: url("../../assets/float-box.svg");
 	width: 150px;
 	height: 150px;

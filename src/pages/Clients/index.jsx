@@ -33,7 +33,7 @@ function Clients() {
 			}
 		}
 		handleGetClients();
-	}, []);
+	}, [clients]);
 
 	return (
 		<div className='row'>

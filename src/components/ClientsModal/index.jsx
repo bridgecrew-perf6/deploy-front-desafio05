@@ -47,7 +47,7 @@ function ClientsModal({ handleClose }) {
 				city: form.city,
 				state: form.state,
 			});
-
+			handleClose();
 			console.log(response);
 		} catch (error) {
 			console.log(error.message);

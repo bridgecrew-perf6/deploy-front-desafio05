@@ -5,7 +5,7 @@ import "./style.css";
 
 function Profile({ image, imageArrow, imageEdit, imageLogout }) {
 	const navigate = useNavigate();
-	const [visible, setVisible] = useState("");
+	const [visible, setVisible] = useState(false);
 
 	function handleLogOut() {
 		try {
@@ -15,14 +15,13 @@ function Profile({ image, imageArrow, imageEdit, imageLogout }) {
 			console.log(error.message);
 		}
 	}
-
 	function handleVisible() {
-		console.log("passou");
-		if (visible === "") {
-			return setVisible("display-none");
+		if (!visible) {
+			return setVisible(true);
 		}
-		return setVisible("");
+		return setVisible(false);
 	}
+
 	return (
 		<div className='container-box profile-gap'>
 			<img src={image} alt='' />
@@ -31,20 +30,22 @@ function Profile({ image, imageArrow, imageEdit, imageLogout }) {
 				<img
 					className={`cursor-pointer`}
 					src={imageArrow}
-					alt=''
 					onClick={handleVisible}
+					alt=''
 				/>
-				<div className={`${visible} container-arrow-position `}>
-					<div className='container-arrow-items'>
-						<img className='cursor-pointer' src={imageEdit} alt='' />
-						<img
-							className='cursor-pointer'
-							src={imageLogout}
-							onClick={handleLogOut}
-							alt=''
-						/>
+				{visible && (
+					<div className={`container-arrow-position `}>
+						<div className='container-arrow-items'>
+							<img className='cursor-pointer' src={imageEdit} alt='' />
+							<img
+								className='cursor-pointer'
+								src={imageLogout}
+								onClick={handleLogOut}
+								alt=''
+							/>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</div>
 	);
