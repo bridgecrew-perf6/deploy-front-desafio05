@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowImg from "../../assets/arrow.svg";
 import ClientDanger from "../../assets/client-danger.svg";
@@ -14,11 +15,13 @@ import ImgEdit from "../../assets/to-edit.svg";
 import CardCharge from "../../components/CardCharge";
 import Login from "../../components/Login";
 import NavLink from "../../components/NavLinks";
+import ProfileModal from "../../components/ProfileModal";
 import TableCharge from "../../components/TableCharge";
 import TableClients from "../../components/TableClients";
 import "./style.css";
 
 function Profile() {
+	const [openProfileModal, setOpenProfileModal] = useState(false);
 	const obj = [
 		{
 			clientName: "Sara Silva",
@@ -127,6 +130,7 @@ function Profile() {
 						imageArrow={ArrowImg}
 						imageEdit={ImgEdit}
 						imageLogout={ImgLogout}
+						setOpenProfileModal={setOpenProfileModal}
 					/>
 				</div>
 				<hr className='divisor-profile' />
@@ -178,6 +182,9 @@ function Profile() {
 						countStyleColor='table-charge-count-success'
 					/>
 				</div>
+				{openProfileModal && (
+					<ProfileModal handleClose={() => setOpenProfileModal(false)} />
+				)}
 			</div>
 		</div>
 	);

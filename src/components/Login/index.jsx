@@ -3,7 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { setItem } from "../../utils/storage";
 import "./style.css";
 
-function Profile({ image, imageArrow, imageEdit, imageLogout }) {
+function Profile({
+	image,
+	imageArrow,
+	imageEdit,
+	imageLogout,
+	setOpenProfileModal,
+}) {
 	const navigate = useNavigate();
 	const [visible, setVisible] = useState(false);
 
@@ -36,7 +42,12 @@ function Profile({ image, imageArrow, imageEdit, imageLogout }) {
 				{visible && (
 					<div className={`container-arrow-position `}>
 						<div className='container-arrow-items'>
-							<img className='cursor-pointer' src={imageEdit} alt='' />
+							<img
+								className='cursor-pointer'
+								src={imageEdit}
+								alt=''
+								onClick={() => setOpenProfileModal(true)}
+							/>
 							<img
 								className='cursor-pointer'
 								src={imageLogout}
