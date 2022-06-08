@@ -1,3 +1,4 @@
+import InputMask from "react-input-mask";
 import "./style.css";
 
 function Inputs({
@@ -11,6 +12,7 @@ function Inputs({
 	style,
 	error,
 	reveal,
+	mask,
 }) {
 	return (
 		<div className='column'>
@@ -18,7 +20,7 @@ function Inputs({
 				{label}
 			</label>
 			<div className='container-component-input'>
-				<input
+				<InputMask
 					className='input'
 					type={type}
 					name={name}
@@ -27,8 +29,11 @@ function Inputs({
 					onChange={(e) => handleChangeForm(e)}
 					placeholder={placeholder}
 					style={style}
+					mask={mask}
 				/>
-				<img className='component-position-img' src={reveal} alt='' />
+				{reveal && (
+					<img className='component-position-img' src={reveal} alt='' />
+				)}
 			</div>
 			{error && (
 				<span className='font-form-error align-form-error'>{error}</span>

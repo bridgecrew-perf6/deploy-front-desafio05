@@ -94,6 +94,7 @@ function ClientsModal({ handleClose }) {
 							placeholder='Digite o CPF'
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
+							mask='999.999.999-99'
 						/>
 
 						<Inputs
@@ -104,6 +105,7 @@ function ClientsModal({ handleClose }) {
 							placeholder='Digite o telefone'
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
+							mask='(99) 9999-9999'
 						/>
 					</div>
 					<Inputs
@@ -135,6 +137,7 @@ function ClientsModal({ handleClose }) {
 							placeholder='Digite o CEP'
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
+							mask='99999-999'
 						/>
 
 						<Inputs
