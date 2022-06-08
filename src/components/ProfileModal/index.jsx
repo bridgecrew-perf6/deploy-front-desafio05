@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Close from "../../assets/close.svg";
-import People from "../../assets/people.svg";
 import api from "../../services/api";
 import Inputs from "../Inputs";
 import "./style.css";
@@ -82,12 +81,16 @@ function ProfileModal({ handleClose }) {
 	return (
 		<div className='register-clients'>
 			<div className='container'>
-				<div className='container-header'>
-					<div className='theme-modal'>
-						<img src={People} alt='' />
-						<h3>Cadastro do Cliente</h3>
+				<div className='container-profile-modal-title'>
+					<div>
+						<h3 className='font-theme-modal'>Edite seu cadastro</h3>
 					</div>
-					<img src={Close} alt='' onClick={() => handleClose()} />
+					<img
+						className='position-close-modal'
+						src={Close}
+						alt=''
+						onClick={() => handleClose()}
+					/>
 				</div>
 
 				<form onSubmit={handleSubmit}>

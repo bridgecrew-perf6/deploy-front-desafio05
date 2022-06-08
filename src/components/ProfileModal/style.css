@@ -27,30 +27,25 @@
 	justify-self: right;
 }
 
-.container-header {
-	width: 478px;
-
+.container-profile-modal-title {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
+	width: 100%;
+	position: relative;
 }
 
-.container-header .theme-modal {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.container-header .theme-modal img {
-	width: 32px;
-	height: 32px;
-}
-
-.container-header .theme-modal h3 {
+.font-theme-modal {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 600;
 	font-size: 26px;
 	line-height: 130%;
 	color: #3f3f55;
+}
+
+.position-close-modal {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .container form {
