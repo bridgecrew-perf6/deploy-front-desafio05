@@ -14,6 +14,13 @@ function Inputs({
 	reveal,
 	mask,
 }) {
+	function handleVisible() {
+		const inputType = document.getElementById(id);
+		if (inputType.type === "password") {
+			return (inputType.type = "text");
+		}
+		return (inputType.type = "password");
+	}
 	return (
 		<div className='column'>
 			<label className='data-label' htmlFor={id}>
@@ -21,7 +28,7 @@ function Inputs({
 			</label>
 			<div className='container-component-input'>
 				<InputMask
-					className='input'
+					className={`input ${error === "" ? null : `danger-border-error`}`}
 					type={type}
 					name={name}
 					id={id}
@@ -32,7 +39,12 @@ function Inputs({
 					mask={mask}
 				/>
 				{reveal && (
-					<img className='component-position-img' src={reveal} alt='' />
+					<img
+						className='component-position-img'
+						src={reveal}
+						alt=''
+						onClick={handleVisible}
+					/>
 				)}
 			</div>
 			{error && (
