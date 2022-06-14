@@ -3,6 +3,7 @@ import Clients from "../pages/Clients";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
+import Charges from "../pages/Charges";
 import { getItem } from "../utils/storage";
 import "./style.css";
 
@@ -21,6 +22,9 @@ function mainRoutes() {
 			</Route>
 			<Route element={<ProtectedRoutes redirectTo='/' />}>
 				<Route path='/clientes' element={<Clients />} />
+			</Route>
+			<Route element={<ProtectedRoutes redirectTo='/' />}>
+				<Route path='/cobranca' element={<Charges />} />
 			</Route>
 		</Routes>
 	);
