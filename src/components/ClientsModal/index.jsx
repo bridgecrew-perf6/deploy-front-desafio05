@@ -6,6 +6,17 @@ import Inputs from "../Inputs";
 import "./style.css";
 
 function ClientsModal({ handleClose }) {
+	const [errorName, setErrorName] = useState("");
+	const [errorEmail, setErrorEmail] = useState("");
+	const [errorCpf, setErrorCpf] = useState("");
+	const [errorPhone, setErrorPhone] = useState("");
+	const [errorCep, setErrorCep] = useState("");
+	const [errorAddress, setErrorAddress] = useState("");
+	const [errorComplement, setErrorComplement] = useState("");
+	const [errorDistrict, setErrorDistrict] = useState("");
+	const [errorCity, setErrorCity] = useState("");
+	const [errorState, setErrorState] = useState("");
+
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
@@ -29,10 +40,57 @@ function ClientsModal({ handleClose }) {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		if (!form.name || !form.email || !form.cpf || !form.phone) {
-			console.log("campos obrigatórios");
+		if (!form.name) {
+			setErrorName("O campo nome é obrigatório");
 			return;
 		}
+		setErrorName("");
+		if (!form.email) {
+			setErrorEmail("O campo e-mail é obrigatório");
+			return;
+		}
+		setErrorEmail("");
+		if (!form.cpf) {
+			setErrorCpf("O campo CPF é obrigatório");
+			return;
+		}
+		setErrorCpf("");
+		if (!form.phone) {
+			setErrorPhone("O campo telefone é obrigatório");
+			return;
+		}
+		setErrorPhone("");
+		if (!form.address) {
+			setErrorAddress("O campo endereço é obrigatório");
+			return;
+		}
+		setErrorAddress("");
+		if (!form.complement) {
+			setErrorComplement("O campo complemento é obrigatório");
+			return;
+		}
+		setErrorComplement("");
+		if (!form.cep) {
+			setErrorCep("O campo CEP é obrigatório");
+			return;
+		}
+		setErrorCep("");
+		if (!form.district) {
+			setErrorDistrict("O campo distrito é obrigatório");
+			return;
+		}
+		setErrorDistrict("");
+		if (!form.city) {
+			setErrorCity("O campo cidade é obrigatório");
+			return;
+		}
+		setErrorCity("");
+		if (!form.state) {
+			setErrorState("O campo estado é obrigatório");
+			return;
+		}
+		setErrorState("");
+
 		console.log(form);
 		try {
 			const response = await api.post("/client", {
@@ -72,6 +130,7 @@ function ClientsModal({ handleClose }) {
 						label='Nome*'
 						id='name'
 						placeholder='Digite o nome'
+						error={errorName}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -82,6 +141,7 @@ function ClientsModal({ handleClose }) {
 						label='E-mail*'
 						id='email'
 						placeholder='Digite seu e-mail'
+						error={errorEmail}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -92,6 +152,7 @@ function ClientsModal({ handleClose }) {
 							label='CPF*'
 							id='cpf'
 							placeholder='Digite o CPF'
+							error={errorCpf}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 							mask='999.999.999-99'
@@ -103,6 +164,7 @@ function ClientsModal({ handleClose }) {
 							label='Telefone*'
 							id='phone'
 							placeholder='Digite o telefone'
+							error={errorPhone}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 							mask='(99) 9999-9999'
@@ -114,6 +176,7 @@ function ClientsModal({ handleClose }) {
 						label='Endereço*'
 						id='address'
 						placeholder='Digite o endereço'
+						error={errorAddress}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -124,6 +187,7 @@ function ClientsModal({ handleClose }) {
 						label='Complemento*'
 						id='complement'
 						placeholder='Digite o complemento'
+						error={errorComplement}
 						style={{ width: "487px" }}
 						handleChangeForm={handleChangeForm}
 					/>
@@ -135,6 +199,7 @@ function ClientsModal({ handleClose }) {
 							label='CEP'
 							id='cep'
 							placeholder='Digite o CEP'
+							error={errorCep}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 							mask='99999-999'
@@ -146,6 +211,7 @@ function ClientsModal({ handleClose }) {
 							label='Bairro'
 							id='district'
 							placeholder='Digite o bairro'
+							error={errorDistrict}
 							style={{ width: "235px" }}
 							handleChangeForm={handleChangeForm}
 						/>
@@ -158,6 +224,7 @@ function ClientsModal({ handleClose }) {
 							label='Cidade'
 							id='city'
 							placeholder='Digite a cidade'
+							error={errorCity}
 							style={{ width: "303px" }}
 							handleChangeForm={handleChangeForm}
 						/>
@@ -168,6 +235,7 @@ function ClientsModal({ handleClose }) {
 							label='UF'
 							id='uf'
 							placeholder='Digite a UF'
+							error={errorState}
 							style={{ width: "160px" }}
 							handleChangeForm={handleChangeForm}
 						/>
