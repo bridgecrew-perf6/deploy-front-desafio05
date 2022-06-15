@@ -11,8 +11,10 @@ import ArrowImg from "../../assets/arrow.svg";
 import ImgEdit from "../../assets/to-edit.svg";
 import ImgLogout from "../../assets/exit.svg";
 import Charge from "../../assets/charges.svg";
+import EditCharge from "../../assets/edit-charger.svg";
 import Filter from "../../assets/filter.svg";
 import Lupa from "../../assets/search.svg";
+import DeleteCharge from "../../assets/delete-charge.svg";
 import "./style.css";
 
 
@@ -88,6 +90,25 @@ function Charges() {
                                     <th>Descrição</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sara</td>
+                                    <td>4564512</td>
+                                    <td>R$ 500,00</td>
+                                    <td>26/01/2021</td>
+                                    <td>
+                                        <span className='status'>Vencida</span>
+                                    </td>
+                                    <td>rftaeryadfgfdgtaretgtghydrtuyru</td>
+
+                                    <td>
+                                        <div className="img-charge-table">
+                                        <img src={EditCharge} alt='' />
+                                        <img src={DeleteCharge} alt="" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>

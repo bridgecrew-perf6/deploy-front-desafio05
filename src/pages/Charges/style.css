@@ -144,3 +144,23 @@ header p {
 
     margin-right: 5px;
 }
+
+.table-charge td {
+    display: table-cell;
+
+    padding-top: 8px;
+    border-top: 1px solid rgba(239, 240, 246, 1);
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #747488;
+}
+.img-charge-table {
+    width: 75px;
+
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
