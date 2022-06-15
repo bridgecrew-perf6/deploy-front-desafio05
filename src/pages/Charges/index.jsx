@@ -21,7 +21,7 @@ function Charges() {
     return (
         <div className="page-charges">
             <nav className='container-navbar-items'>
-                <Link to='/cobranca'>
+                <Link to='/home'>
                     <NavLink
                         image={HomeInactve}
                         text='Home'
@@ -29,19 +29,21 @@ function Charges() {
                         display='hidden'
                     />
                 </Link>
+                <Link to='/clientes'>
                 <NavLink
                     image={ProfileImg}
                     text='Clientes'
                     color='color-navbar-text-default'
                     display='hidden'
                 />
+                </Link>
                 <NavLink image={ChargePink} text='Cobranças' color='main-pink' />
             </nav>
 
             <div className="page-charge-rigth">
                 <header>
                     <p>Cobranças</p>
-                   <div className="page-charge-header">
+                    <div className="page-charge-header">
                         <Login
                             image={ImgProfile}
                             imageArrow={ArrowImg}
@@ -49,42 +51,47 @@ function Charges() {
                             imageLogout={ImgLogout}
                             setOpenProfileModal={setOpenProfileModal}
                         />
-                   </div>
-                </header>
-                <hr className='hr-charge-botton-header' />
-                <div className='clients-container-area-header'>
-                    <div className='theme'>
-                        <img src={Charge} alt='' />
-                        <h3>Cobranças</h3>
                     </div>
-                    <div className='customer-interaction'>
-                        <img src={Filter} alt='' />
-                        <div className='clients-container-relative'>
-                            <input placeholder='Pesquisa' />
-                            <img src={Lupa} alt='' />
+                </header>
+
+                <hr className='hr-charge-botton-header' />
+
+                <div className="centralize-charge">
+                    <div className='charge-area-header'>
+                        <div className='img-h3-charge-header'>
+                            <img src={Charge} alt='' />
+                            <h3>Cobranças</h3>
+                        </div>
+                        <div className='charge-interaction-img-input'>
+                            <img src={Filter} alt='' />
+                            <div className='charge-centralize-position-relative'>
+                                <input placeholder='Pesquisa' />
+                                <img src={Lupa} alt='' />
+                            </div>
                         </div>
                     </div>
+                    <div className="table-charge">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className='center-order'>
+                                        <img src={Order} alt='' />
+                                        Cliente
+                                    </th>
+                                    <th className='center-order'>
+                                        <img src={Order} alt='' />
+                                        ID Cob.
+                                    </th>
+                                    <th>Valor</th>
+                                    <th>Data de venc.</th>
+                                    <th>Status</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
-                <div className="table-charge">
-                <table>
-                    <thead>
-                        <tr>
-                            <th className='center-order'>
-                                <img src={Order} alt='' />
-                                Cliente
-                            </th>
-                            <th className='center-order'>
-                                <img src={Order} alt='' />
-                                ID Cob.
-                            </th>
-                            <th>Valor</th>
-                            <th>Data de venc.</th>
-                            <th>Status</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                </table>
-                </div>
+
             </div>
         </div>
     )

@@ -114,12 +114,14 @@ function Profile() {
 						display='hidden'
 					/>
 				</Link>
-				<NavLink
-					image={DocumentImg}
-					text='Cobranças'
-					color='color-navbar-text-default'
-					display='hidden'
-				/>
+				<Link to='/cobranca'>
+					<NavLink
+						image={DocumentImg}
+						text='Cobranças'
+						color='color-navbar-text-default'
+						display='hidden'
+					/>
+				</Link>
 			</nav>
 
 			<div className='container-profile-dashboard'>

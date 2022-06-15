@@ -49,12 +49,14 @@ function Clients() {
 					/>
 				</Link>
 				<NavLink image={ClientsPink} text='Clientes' color='main-pink' />
-				<NavLink
-					image={DocumentImg}
-					text='Cobranças'
-					color='color-navbar-text-default'
-					display='hidden'
-				/>
+				<Link to='/cobranca'>
+					<NavLink
+						image={DocumentImg}
+						text='Cobranças'
+						color='color-navbar-text-default'
+						display='hidden'
+					/>
+				</Link>
 			</nav>
 
 			<div className='clients-container'>
