@@ -20,6 +20,7 @@ import "./style.css";
 
 function Charges() {
     const [openProfileModal, setOpenProfileModal] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState(false)
     return (
         <div className="page-charges">
             <nav className='container-navbar-items'>
@@ -32,12 +33,12 @@ function Charges() {
                     />
                 </Link>
                 <Link to='/clientes'>
-                <NavLink
-                    image={ProfileImg}
-                    text='Clientes'
-                    color='color-navbar-text-default'
-                    display='hidden'
-                />
+                    <NavLink
+                        image={ProfileImg}
+                        text='Clientes'
+                        color='color-navbar-text-default'
+                        display='hidden'
+                    />
                 </Link>
                 <NavLink image={ChargePink} text='Cobranças' color='main-pink' />
             </nav>
@@ -103,8 +104,8 @@ function Charges() {
 
                                     <td>
                                         <div className="img-charge-table">
-                                        <img src={EditCharge} alt='' />
-                                        <img src={DeleteCharge} alt="" />
+                                            <img className="edit-charge-button" src={EditCharge} alt='' />
+                                            <img className="delete-charge-button" src={DeleteCharge} alt="" />
                                         </div>
                                     </td>
                                 </tr>

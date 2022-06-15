@@ -24,7 +24,7 @@ function mainRoutes() {
 				<Route path='/clientes' element={<Clients />} />
 			</Route>
 			<Route element={<ProtectedRoutes redirectTo='/' />}>
-				<Route path='/cobranca' element={<Charges />} />
+				<Route path='/cobrancas' element={<Charges />} />
 			</Route>
 		</Routes>
 	);
