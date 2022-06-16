@@ -15,8 +15,11 @@ import EditCharge from "../../assets/edit-charger.svg";
 import Filter from "../../assets/filter.svg";
 import Lupa from "../../assets/search.svg";
 import DeleteCharge from "../../assets/delete-charge.svg";
-import ModalDelete from "../../components/ModalDelete"
-import ModalEditCharge from "../../components/ModalEditCharge"
+import ModalDelete from "../../components/ModalDelete";
+import ModalEditCharge from "../../components/ModalEditCharge";
+import DeleteError from "../../components/DeleteError";
+import DeleteSuccess from "../../components/DeleteSuccess";
+
 import "./style.css";
 
 
@@ -24,6 +27,9 @@ function Charges() {
     const [openProfileModal, setOpenProfileModal] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
+    const [openErroDelete, setOpenErrorDelete] = useState(false);
+    const [openSucessDelete, setOpenSucessDelete] = useState(false);
+
     return (
         <div className="page-charges">
             <nav className='container-navbar-items'>
@@ -133,6 +139,7 @@ function Charges() {
                     {openDeleteModal && (
                         <ModalDelete setOpenDeleteModal={setOpenDeleteModal} />
                     )}
+
                 </div>
 
             </div>

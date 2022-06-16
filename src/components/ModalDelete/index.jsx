@@ -1,8 +1,13 @@
+import { useState } from "react";
 import Close from "../../assets/close.svg";
 import Warning from "../../assets/warning.svg";
+import DeleteError from "../DeleteError";
+import DeleteSuccess from "../DeleteSuccess";
 import "./style.css";
 
-function ModalDelete({setOpenDeleteModal}) {
+function ModalDelete({ setOpenDeleteModal }) {
+    const [openErroDelete, setOpenErrorDelete] = useState(false);
+    const [openSucessDelete, setOpenSucessDelete] = useState(false);
     return (
         <div className="modal-del-charge">
             <div className="container-white-del">
@@ -16,11 +21,27 @@ function ModalDelete({setOpenDeleteModal}) {
                     <img src={Warning} alt="" />
                     <p>Tem certeza que deseja excluir esta cobrança?</p>
                     <div className="buttons-yes-no">
-                        <button className="no">Não</button>
-                        <button className="yes">Sim</button>
+                        <button
+                            className="no"
+                            onClick={() => setOpenDeleteModal(false)}
+                        >Não
+                        </button>
+
+                        <button
+                            className="yes"
+                            onClick={() => setOpenSucessDelete(true) && setOpenDeleteModal(false)}
+
+                        >Sim
+                        </button>
                     </div>
                 </div>
             </div>
+            {openErroDelete && (
+                <DeleteError setOpenErrorDelete={setOpenErrorDelete} />
+            )}
+            {openSucessDelete && (
+                <DeleteSuccess setOpenSucessDelete={setOpenSucessDelete} />
+            )}
         </div>
     )
 }

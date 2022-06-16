@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito:wght@400;600;700&display=swap');
 
 .modal-del-charge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(145, 154, 150, 0.3);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(145, 154, 150, 0.3);
+    backdrop-filter: blur(4px);
+
 }
 
 .container-white-del {
@@ -67,6 +71,8 @@
     line-height: 25px;
     color: #AE1100;
 
+    cursor: pointer;
+
 
 }
 
@@ -85,4 +91,6 @@
     font-size: 18px;
     line-height: 25px;
     color: #034A2A;
+
+    cursor: pointer;
 }
