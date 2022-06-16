@@ -156,6 +156,8 @@ header p {
     font-size: 14px;
     line-height: 24px;
     color: #747488;
+
+    cursor: pointer;
 }
 .img-charge-table {
     width: 75px;
@@ -163,4 +165,6 @@ header p {
     display: flex;
     align-items:center;
     justify-content: space-between;
+
+    cursor: pointer;
 }

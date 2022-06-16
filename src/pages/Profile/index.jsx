@@ -114,7 +114,7 @@ function Profile() {
 						display='hidden'
 					/>
 				</Link>
-				<Link to='/cobranca'>
+				<Link to='/cobrancas'>
 					<NavLink
 						image={DocumentImg}
 						text='Cobranças'

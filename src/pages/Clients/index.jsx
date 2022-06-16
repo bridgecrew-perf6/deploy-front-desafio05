@@ -49,7 +49,7 @@ function Clients() {
 					/>
 				</Link>
 				<NavLink image={ClientsPink} text='Clientes' color='main-pink' />
-				<Link to='/cobranca'>
+				<Link to='/cobrancas'>
 					<NavLink
 						image={DocumentImg}
 						text='Cobranças'

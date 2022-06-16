@@ -15,12 +15,15 @@ import EditCharge from "../../assets/edit-charger.svg";
 import Filter from "../../assets/filter.svg";
 import Lupa from "../../assets/search.svg";
 import DeleteCharge from "../../assets/delete-charge.svg";
+import ModalDelete from "../../components/ModalDelete"
+import ModalEditCharge from "../../components/ModalEditCharge"
 import "./style.css";
 
 
 function Charges() {
     const [openProfileModal, setOpenProfileModal] = useState(false);
-    const [openDeleteModal, setOpenDeleteModal] = useState(false)
+    const [openEditModal, setOpenEditModal] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState(false);
     return (
         <div className="page-charges">
             <nav className='container-navbar-items'>
@@ -104,14 +107,32 @@ function Charges() {
 
                                     <td>
                                         <div className="img-charge-table">
-                                            <img className="edit-charge-button" src={EditCharge} alt='' />
-                                            <img className="delete-charge-button" src={DeleteCharge} alt="" />
+                                            <img
+                                                className="edit-charge-button"
+                                                src={EditCharge}
+                                                alt=''
+                                                onClick={() => setOpenEditModal(true)}
+
+                                            />
+                                            <img
+                                                className="delete-charge-button"
+                                                src={DeleteCharge}
+                                                alt=""
+                                                onClick={() => setOpenDeleteModal(true)}
+                                            />
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    
+                    {openEditModal && (
+                        <ModalEditCharge handleClose={() => setOpenEditModal(false)} />
+                    )}
+                    {openDeleteModal && (
+                        <ModalDelete setOpenDeleteModal={setOpenDeleteModal} />
+                    )}
                 </div>
 
             </div>
