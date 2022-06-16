@@ -128,7 +128,7 @@ function Charges() {
                     </div>
                     
                     {openEditModal && (
-                        <ModalEditCharge handleClose={() => setOpenEditModal(false)} />
+                        <ModalEditCharge setOpenEditModal={setOpenEditModal} />
                     )}
                     {openDeleteModal && (
                         <ModalDelete setOpenDeleteModal={setOpenDeleteModal} />
