@@ -8,6 +8,17 @@ import "./style.css";
 function ModalDelete({ setOpenDeleteModal }) {
     const [openErroDelete, setOpenErrorDelete] = useState(false);
     const [openSucessDelete, setOpenSucessDelete] = useState(false);
+    const [chargesClients, setchargesClients] = useState([]);
+
+    async function deleteCharge() {
+
+        try {
+
+        } catch (error) {
+
+        }
+    }
+
     return (
         <div className="modal-del-charge">
             <div className="container-white-del">
@@ -26,23 +37,28 @@ function ModalDelete({ setOpenDeleteModal }) {
                             onClick={() => setOpenDeleteModal(false)}
                         >Não
                         </button>
-
-                        <button
-                            className="yes"
-                            onClick={() => setOpenSucessDelete(true) && setOpenDeleteModal(false)}
-
-                        >Sim
-                        </button>
-                    </div>
+                        {chargesClients.map((charge) =>
+                            <button key={charge.id}
+                                className="yes"
+                                onClick={() =>  deleteCharge()}
+                            // onClick={() => setOpenSucessDelete(true) && setOpenDeleteModal(false)}
+                            >Sim
+                    </button>
+                        )}
                 </div>
             </div>
-            {openErroDelete && (
-                <DeleteError setOpenErrorDelete={setOpenErrorDelete} />
-            )}
-            {openSucessDelete && (
-                <DeleteSuccess setOpenSucessDelete={setOpenSucessDelete} />
-            )}
         </div>
+            {
+        openErroDelete && (
+            <DeleteError setOpenErrorDelete={setOpenErrorDelete} />
+        )
+    }
+    {
+        openSucessDelete && (
+            <DeleteSuccess setOpenSucessDelete={setOpenSucessDelete} />
+        )
+    }
+        </div >
     )
 }
 

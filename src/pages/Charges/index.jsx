@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../../services/api";
 import NavLink from "../../components/NavLinks";
 import Login from "../../components/Login";
 import HomeInactve from "../../assets/home-inactve.svg";
@@ -14,7 +15,7 @@ import Charge from "../../assets/charges.svg";
 import EditCharge from "../../assets/edit-charger.svg";
 import Filter from "../../assets/filter.svg";
 import Lupa from "../../assets/search.svg";
-import DeleteCharge from "../../assets/delete-charge.svg";
+import Delete_Charge from "../../assets/delete-charge.svg";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEditCharge from "../../components/ModalEditCharge";
 import DeleteError from "../../components/DeleteError";
@@ -24,11 +25,25 @@ import "./style.css";
 
 
 function Charges() {
+    const [chargesClients, setchargesClients] = useState([]);
     const [openProfileModal, setOpenProfileModal] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const [openErroDelete, setOpenErrorDelete] = useState(false);
     const [openSucessDelete, setOpenSucessDelete] = useState(false);
+
+    async function loadCharges() {
+        try {
+            const response = await api.get('/cobrancas');
+            setchargesClients(response.data);
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        loadCharges();
+    }, [])
 
     return (
         <div className="page-charges">
@@ -100,39 +115,41 @@ function Charges() {
                                     <th>Descrição</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Sara</td>
-                                    <td>4564512</td>
-                                    <td>R$ 500,00</td>
-                                    <td>26/01/2021</td>
-                                    <td>
-                                        <span className='status'>Vencida</span>
-                                    </td>
-                                    <td>rftaeryadfgfdgtaretgtghydrtuyru</td>
+                            {chargesClients.map((charge) => (
+                                <tbody key={charge.id}>
+                                    <tr>
+                                        <td>{charge.name}</td>
+                                        <td>{charge.id}</td>
+                                        <td>{charge.value}</td>
+                                        <td>{charge.date}</td>
+                                        <td>
+                                            <span className='status'>{charge.status}</span>
+                                        </td>
+                                        <td>{charge.description}</td>
 
-                                    <td>
-                                        <div className="img-charge-table">
-                                            <img
-                                                className="edit-charge-button"
-                                                src={EditCharge}
-                                                alt=''
-                                                onClick={() => setOpenEditModal(true)}
+                                        <td>
+                                            <div className="img-charge-table">
+                                                <img
+                                                    className="edit-charge-button"
+                                                    src={EditCharge}
+                                                    alt=''
+                                                    onClick={() => setOpenEditModal(true)}
 
-                                            />
-                                            <img
-                                                className="delete-charge-button"
-                                                src={DeleteCharge}
-                                                alt=""
-                                                onClick={() => setOpenDeleteModal(true)}
-                                            />
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                                                />
+                                                <img
+                                                    className="delete-charge-button"
+                                                    src={Delete_Charge}
+                                                    alt=""
+                                                    onClick={() => setOpenDeleteModal(true)}
+                                                />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                               ))}
                         </table>
                     </div>
-                    
+
                     {openEditModal && (
                         <ModalEditCharge setOpenEditModal={setOpenEditModal} />
                     )}
