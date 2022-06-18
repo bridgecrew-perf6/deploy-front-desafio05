@@ -118,7 +118,7 @@ function ClientsModal({ handleClose }) {
 				<div className='container-header'>
 					<div className='theme-modal'>
 						<img src={People} alt='' />
-						<h3>Cadastro do Cliente</h3>
+						<h3>Editar Cliente</h3>
 					</div>
 					<img src={Close} alt='' onClick={() => handleClose()} />
 				</div>
