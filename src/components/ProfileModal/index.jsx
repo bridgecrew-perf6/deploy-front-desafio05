@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState} from "react";
 import Close from "../../assets/close.svg";
 import api from "../../services/api";
 import Inputs from "../Inputs";
+import {getItem} from '../../utils/storage'
 import "./style.css";
 
 function ProfileModal({ handleClose }) {
@@ -11,6 +12,9 @@ function ProfileModal({ handleClose }) {
 	const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
 	const [errorCpf, setErrorCpf] = useState("");
 	const [errorPhone, setErrorPhone] = useState("");
+
+	const id = getItem("id");
+	console.log(id);
 
 	const [form, setForm] = useState({
 		name: "",
@@ -64,7 +68,7 @@ function ProfileModal({ handleClose }) {
 
 		console.log(form);
 		try {
-			const response = await api.put("/user", {
+			const response = await api.put(`/user/${id}`, {
 				name: form.name,
 				email: form.email,
 				password: form.password,

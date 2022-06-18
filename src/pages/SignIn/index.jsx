@@ -52,8 +52,9 @@ function SignIn() {
 				password: forms.password,
 			});
 
-			const { token } = response.data;
+			const { token, id } = response.data;
 			setItem("token", token);
+			setItem("id", id);
 			navigate("/home");
 		} catch (error) {
 			console.log(error.message);

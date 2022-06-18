@@ -18,6 +18,7 @@ function ModalChargeEdit({ handleClose }) {
 		description: "",
 		dueDate: "",
 		value: "",
+		status: ""
 	});
 
 	function handleChangeForm(e) {
@@ -27,6 +28,17 @@ function ModalChargeEdit({ handleClose }) {
 			[e.target.name]: value,
 		});
 	}
+	//ESTÁ FUNÇAO NAO ESTA FUNCIONANDO.
+	// async function handleGet(){
+	// 	try {
+	// 		const response = await api.get("/transaction/5");
+	// 		console.log(response.data);
+			
+	// 	} catch (error) {
+	// 		console.log(error.message);
+	// 	}
+	// }
+	// handleGet()
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -53,11 +65,11 @@ function ModalChargeEdit({ handleClose }) {
 
 		console.log(form);
 		try {
-			const response = await api.post("/client", {
-				client: form.name,
+			const response = await api.post("/transaction/1", {
 				description: form.description,
-				expiration: form.dueDate,
+				status: form.status,
 				amount: form.value,
+				expiration: form.dueDate,
 			});
 			handleClose();
 			console.log(response);
@@ -65,6 +77,7 @@ function ModalChargeEdit({ handleClose }) {
 			console.log(error.message);
 		}
 	}
+
 
 	function markOk() {
 		setChargeOk(!chargeOk);
