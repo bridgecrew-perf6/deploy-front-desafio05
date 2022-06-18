@@ -5,7 +5,7 @@ import api from "../../services/api";
 import Inputs from "../Inputs";
 import "./style.css";
 
-function ModalCharge({ handleClose }) {
+function ModalChargeCreate({ handleClose }) {
 	const [errorName, setErrorName] = useState("");
 	const [errorDescription, setErrorDescription] = useState("");
 	const [errorDueDate, setErrorDueDate] = useState("");
@@ -88,7 +88,7 @@ function ModalCharge({ handleClose }) {
 				<div className='container-header'>
 					<div className='theme-modal'>
 						<img src={File} alt='' />
-						<h3>Edição de Cobrança</h3>
+						<h3>Cadastro de Cobrança</h3>
 					</div>
 					<img src={Close} alt='' onClick={() => handleClose()} />
 				</div>
@@ -174,4 +174,4 @@ function ModalCharge({ handleClose }) {
 	);
 }
 
-export default ModalCharge;
+export default ModalChargeCreate;
