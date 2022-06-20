@@ -18,8 +18,8 @@ import Lupa from "../../assets/search.svg";
 import Delete_Charge from "../../assets/delete-charge.svg";
 import ModalDelete from "../../components/ModalDelete";
 import ModalEditCharge from "../../components/ModalEditCharge";
-import DeleteError from "../../components/DeleteError";
-import DeleteSuccess from "../../components/DeleteSuccess";
+// import DeleteError from "../../components/DeleteError";
+// import DeleteSuccess from "../../components/DeleteSuccess";
 
 import "./style.css";
 
@@ -31,12 +31,16 @@ function Charges() {
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const [openErroDelete, setOpenErrorDelete] = useState(false);
     const [openSucessDelete, setOpenSucessDelete] = useState(false);
+    const [search, setSearch] = useState('')
+
+    const lowerSearch = search.toLowerCase
+    const filterCharges = chargesClients.filter((charge) => charge.toLowerCase().includes(lowerSearch))
 
     async function loadCharges() {
         try {
             const response = await api.get('/cobrancas');
             setchargesClients(response.data);
-            
+
         } catch (error) {
             console.log(error)
         }
@@ -92,7 +96,10 @@ function Charges() {
                         <div className='charge-interaction-img-input'>
                             <img src={Filter} alt='' />
                             <div className='charge-centralize-position-relative'>
-                                <input placeholder='Pesquisa' />
+                                <input
+                                    placeholder='Pesquisa'
+                                    value={search}
+                                    onChange={(ev) => setSearch(ev.target.value)} />
                                 <img src={Lupa} alt='' />
                             </div>
                         </div>
@@ -115,7 +122,7 @@ function Charges() {
                                     <th>Descrição</th>
                                 </tr>
                             </thead>
-                            {chargesClients.map((charge) => (
+                            {filterCharges.map((charge) => (
                                 <tbody key={charge.id}>
                                     <tr>
                                         <td>{charge.name}</td>
@@ -146,7 +153,7 @@ function Charges() {
                                         </td>
                                     </tr>
                                 </tbody>
-                               ))}
+                            ))}
                         </table>
                     </div>
 
