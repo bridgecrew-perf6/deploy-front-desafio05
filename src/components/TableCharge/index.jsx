@@ -16,11 +16,11 @@ function TableCharge({ obj, countStyleColor, text }) {
 				{obj
 					.map((value) => {
 						return (
-							<>
-								<h1 className='font-charge-info'>{value.clientName}</h1>
-								<h1 className='font-charge-info'>{value.clientIdCharge}</h1>
-								<h1 className='font-charge-info'>{value.clientValueCharge}</h1>
-							</>
+							<div key={value.id}>
+								<h1 className='font-charge-info'>{value.name}</h1>
+								<h1 className='font-charge-info'>{value.id}</h1>
+								<h1 className='font-charge-info'>{value.amount}</h1>
+							</div>
 						);
 					})
 					.filter((value, index) => index < 4)}

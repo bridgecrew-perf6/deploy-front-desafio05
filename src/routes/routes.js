@@ -1,9 +1,10 @@
 import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import Charges from "../pages/Charges";
 import Clients from "../pages/Clients";
+import Empty from "../pages/Empty";
 import Profile from "../pages/Profile";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
-import Charges from "../pages/Charges";
 import { getItem } from "../utils/storage";
 import "./style.css";
 
@@ -15,6 +16,7 @@ function mainRoutes() {
 	}
 	return (
 		<Routes>
+			<Route path='/empty' element={<Empty />} />
 			<Route path='/' element={<SignIn />} />
 			<Route path='/cadastro' element={<SignUp />} />
 			<Route element={<ProtectedRoutes redirectTo='/' />}>

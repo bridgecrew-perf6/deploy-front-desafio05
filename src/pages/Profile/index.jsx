@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ArrowImg from "../../assets/arrow.svg";
 import ClientDanger from "../../assets/client-danger.svg";
@@ -18,90 +18,43 @@ import NavLink from "../../components/NavLinks";
 import ProfileModal from "../../components/ProfileModal";
 import TableCharge from "../../components/TableCharge";
 import TableClients from "../../components/TableClients";
+import api from '../../services/api'
 import "./style.css";
 
 function Profile() {
 	const [openProfileModal, setOpenProfileModal] = useState(false);
-	const obj = [
-		{
-			clientName: "Sara Silva",
-			clientIdCharge: 223456781,
-			clientValueCharge: "R$ 1000,00",
-		},
-		{
-			clientName: "Carlos Prado",
-			clientIdCharge: 223456782,
-			clientValueCharge: "R$ 400,00",
-		},
-		{
-			clientName: "Lara Brito",
-			clientIdCharge: 223456783,
-			clientValueCharge: "R$ 900,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientIdCharge: 223456784,
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientIdCharge: 223456784,
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientIdCharge: 223456784,
-			clientValueCharge: "R$ 700,00",
-		},
-	];
-	const obj2 = [
-		{
-			clientName: "Sara Silva",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 1000,00",
-		},
-		{
-			clientName: "Carlos Prado",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 400,00",
-		},
-		{
-			clientName: "Lara Brito",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 900,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-		{
-			clientName: "Soraya Neves",
-			clientDueDate: "03/02/2021",
-			clientValueCharge: "R$ 700,00",
-		},
-	];
+	const [pendent, setPendent] = useState();
+	const [onDay, setOnDay] = useState();
+	const [transaction, settransaction] = useState();
 
+
+
+	useEffect(() => {
+		async function handleGet() {
+			const pendent = await api.get('/transaction/pendent');
+			const onDay = await api.get("/transaction/payd");
+			const transaction = await api.get('/transaction/all')
+
+			setPendent(pendent.data)
+			setOnDay(onDay.data)
+			settransaction(transaction.data)
+		}
+		handleGet();
+	}, [])
+	let clientsPendentAll = []
+	let clientsOnDayAll = []
+
+	if(transaction){
+
+		for(let i = 0; i <= transaction.length -1; i++){
+			if(transaction[i].onday === false){
+				clientsPendentAll.push(transaction[i])
+			}
+			clientsOnDayAll.push(transaction[i]);
+		}
+	}
+	
+	
 	return (
 		<div className='container-profile'>
 			<nav className='container-navbar-items'>
@@ -156,33 +109,45 @@ function Profile() {
 					/>
 				</div>
 				<div className='container-profile-cards '>
-					<TableCharge
-						text='Cobranças Vencidas'
-						obj={obj}
-						countStyleColor='table-charge-count-danger'
-					/>
-					<TableCharge
-						text='Cobranças Previstas'
-						obj={obj}
-						countStyleColor='table-charge-count-caution'
-					/>
-					<TableCharge
-						text='Cobranças Pagas'
-						obj={obj}
-						countStyleColor='table-charge-count-success'
-					/>
+					{pendent && 
+						<TableCharge
+							text='Cobranças Vencidas'
+							obj={pendent}
+							countStyleColor='table-charge-count-danger'
+						/>
+					}
+					{transaction &&
+						<TableCharge
+							text='Cobranças Previstas'
+							obj={transaction}
+							countStyleColor='table-charge-count-caution'
+						/>
+					}
+					{onDay &&
+						<TableCharge
+							text='Cobranças Pagas'
+							obj={onDay}
+							countStyleColor='table-charge-count-success'
+						/>
+					}
 				</div>
 				<div className='container-profile-cards '>
-					<TableClients
-						image={ClientDanger}
-						obj2={obj2}
-						countStyleColor='table-charge-count-danger'
-					/>
-					<TableClients
-						image={ClientSuccess}
-						obj2={obj2}
-						countStyleColor='table-charge-count-success'
-					/>
+					{transaction &&
+						<TableClients
+						text='Clientes Inadimplentes'
+							image={ClientDanger}
+							obj2={clientsPendentAll}
+							countStyleColor='table-charge-count-danger'
+						/>
+					}
+					{transaction &&
+						<TableClients
+						text='Clientes em dia'
+							image={ClientSuccess}
+							obj2={clientsOnDayAll}
+							countStyleColor='table-charge-count-success'
+						/>
+					}
 				</div>
 				{openProfileModal && (
 					<ProfileModal handleClose={() => setOpenProfileModal(false)} />

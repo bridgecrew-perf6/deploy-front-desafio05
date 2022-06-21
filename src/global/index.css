@@ -109,6 +109,14 @@ body {
 	color: #0e8750;
 }
 
+.font-radio {
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #3f3f55;
+}
+
 /* pre-confs */
 
 .column {
