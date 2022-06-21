@@ -1,12 +1,10 @@
-.container-sign-up {
+.container {
 	display: flex;
-	min-width: 100vw;
 	min-height: 100vh;
 }
 
 .div-register {
-	display: flex;
-	min-width: 60vw;
+	width: 66%;
 }
 
 .footer-menu-title {
@@ -30,10 +28,6 @@ span.pink {
 	text-decoration: underline;
 }
 
-a {
-	text-decoration: none;
-}
-
 .lines {
 	display: flex;
 	justify-content: center;
@@ -41,21 +35,12 @@ a {
 	margin-top: 27.6rem;
 }
 
-.lines-final {
-	display: flex;
-	justify-content: center;
-	margin-top: 6rem;
-	gap: 8px;
+a {
+	text-decoration: none;
 }
 
-@media (max-width: 1440px) {
-	.lines {
-		margin-top: 8.5rem;
-	}
-
-	.div-register {
-		min-width: 55vw;
-	}
+.white {
+	color: #f8f8f9;
 }
 
 .center-form {

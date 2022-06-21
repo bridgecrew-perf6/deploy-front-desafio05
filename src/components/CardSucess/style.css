@@ -9,17 +9,3 @@
 .bg-success h1 {
 	margin-top: 24px;
 }
-
-@media (max-width: 1440px) {
-	.bg-success {
-		display: flex;
-		flex-direction: column;
-		background-color: #f0f0f5;
-		padding: 80px 55px 80px 55px;
-		border-radius: 30px;
-	}
-
-	.resize-img {
-		width: 60px;
-	}
-}
