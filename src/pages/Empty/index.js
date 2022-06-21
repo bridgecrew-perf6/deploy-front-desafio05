@@ -1,10 +1,9 @@
-import ModalChargeEdit from "../../components/ModalChargeEdit";
 import "./style.css";
 
 function Empty() {
 	return (
 		<div className='App'>
-			<ModalChargeEdit />
+			<h1>Empty</h1>
 		</div>
 	);
 }
