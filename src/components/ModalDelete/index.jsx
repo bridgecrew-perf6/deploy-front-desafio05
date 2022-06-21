@@ -9,7 +9,6 @@ import "./style.css";
 function ModalDelete({ setOpenDeleteModal }) {
     const [openErroDelete, setOpenErrorDelete] = useState(false);
     const [openSucessDelete, setOpenSucessDelete] = useState(false);
-    const [chargesClients, setchargesClients] = useState([]);
 
     async function deleteCharge() {
 

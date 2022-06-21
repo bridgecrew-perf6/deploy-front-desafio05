@@ -19,15 +19,12 @@ import Delete_Charge from "../../assets/delete-charge.svg";
 import ModalDelete from "../../components/ModalDelete";
 import ModalChargeEdit from "../../components/ModalChargeEdit";
 import Search  from "../../components/Search";
-// import DeleteError from "../../components/DeleteError";
-// import DeleteSuccess from "../../components/DeleteSuccess";
 
 import "./style.css";
 
 
 function Charges() {
     const [chargesClients, setchargesClients] = useState([]);
-    const [openProfileModal, setOpenProfileModal] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
     const [search, setSearch] = useState('')
@@ -76,7 +73,7 @@ function Charges() {
                             imageArrow={ArrowImg}
                             imageEdit={ImgEdit}
                             imageLogout={ImgLogout}
-                            setOpenProfileModal={setOpenProfileModal}
+
                         />
                     </div>
                 </header>
