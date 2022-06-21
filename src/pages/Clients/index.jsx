@@ -17,17 +17,20 @@ import Login from "../../components/Login";
 import NavLink from "../../components/NavLinks";
 import ProfileModal from "../../components/ProfileModal";
 import api from "../../services/api";
+import CobrancaModal from "../../components/ModalChargeCreate"
 import "./style.css";
 
 function Clients() {
 	const [openClientsModal, setOpenClientsModal] = useState(false);
 	const [openProfileModal, setOpenProfileModal] = useState(false);
+	const [clienteAtual, setClienteAtual] = useState({})
 	const [clients, setClients] = useState();
+	const [openCobrancaModal, setOpenCobrancaModal] = useState(false)
 
 	useEffect(() => {
 		async function handleGetClients() {
 			try {
-				const response = await api.get("/clients");
+				const response = await api.get("/client/all");
 
 				setClients(response.data);
 			} catch (error) {
@@ -120,20 +123,33 @@ function Clients() {
 												<span className='status'>Inadimplente</span>
 											</td>
 											<td>
-												<img src={Charge} alt='' />
+												<img 
+												src={Charge} 
+												alt=''
+													onClick={() => {
+														setClienteAtual({ ...cliente });
+														 setOpenCobrancaModal(true)}}
+												/>
 											</td>
 										</tr>
 									</tbody>
 								))}
 						</table>
 					</div>
-					{openClientsModal && (
-						<ClientsModal handleClose={() => setOpenClientsModal(false)} />
-					)}
-					{openProfileModal && (
-						<ProfileModal handleClose={() => setOpenProfileModal(false)} />
-					)}
+					
 				</div>
+				{openClientsModal && (
+					<ClientsModal handleClose={() => setOpenClientsModal(false)} />
+				)}
+				{openProfileModal && (
+					<ProfileModal handleClose={() => setOpenProfileModal(false)} />
+				)}
+				{openCobrancaModal && (
+					<CobrancaModal clienteAtual={clienteAtual} handleClose={() => {
+						setOpenCobrancaModal(false);
+						setClienteAtual({});
+					}} />
+				)}
 			</div>
 		</div>
 	);

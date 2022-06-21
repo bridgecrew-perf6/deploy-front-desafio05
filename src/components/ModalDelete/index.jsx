@@ -3,6 +3,7 @@ import Close from "../../assets/close.svg";
 import Warning from "../../assets/warning.svg";
 import DeleteError from "../DeleteError";
 import DeleteSuccess from "../DeleteSuccess";
+import { toast } from "react-toastify";
 import "./style.css";
 
 function ModalDelete({ setOpenDeleteModal }) {
@@ -13,9 +14,10 @@ function ModalDelete({ setOpenDeleteModal }) {
     async function deleteCharge() {
 
         try {
+            toast.success("Cobrança excluída com sucesso!")
 
         } catch (error) {
-
+            toast.error(error)
         }
     }
 
@@ -37,27 +39,29 @@ function ModalDelete({ setOpenDeleteModal }) {
                             onClick={() => setOpenDeleteModal(false)}
                         >Não
                         </button>
-                        {chargesClients.map((charge) =>
-                            <button key={charge.id}
-                                className="yes"
-                                onClick={() =>  deleteCharge()}
-                            // onClick={() => setOpenSucessDelete(true) && setOpenDeleteModal(false)}
-                            >Sim
-                    </button>
-                        )}
+                        <button
+                            className="yes"
+                            onClick={() => {
+                                deleteCharge();
+                                setOpenDeleteModal(false)
+                            }}
+  
+                        >Sim
+                        </button>
+
+                    </div>
                 </div>
             </div>
-        </div>
             {
-        openErroDelete && (
-            <DeleteError setOpenErrorDelete={setOpenErrorDelete} />
-        )
-    }
-    {
-        openSucessDelete && (
-            <DeleteSuccess setOpenSucessDelete={setOpenSucessDelete} />
-        )
-    }
+                openErroDelete && (
+                    <DeleteError setOpenErrorDelete={setOpenErrorDelete} />
+                )
+            }
+            {
+                openSucessDelete && (
+                    <DeleteSuccess setOpenSucessDelete={setOpenSucessDelete} />
+                )
+            }
         </div >
     )
 }

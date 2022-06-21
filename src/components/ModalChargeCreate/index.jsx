@@ -53,7 +53,7 @@ function ModalChargeCreate({ handleClose }) {
 
 		console.log(form);
 		try {
-			const response = await api.post("/client", {
+			const response = await api.post("/transaction", {
 				client: form.name,
 				description: form.description,
 				expiration: form.dueDate,
@@ -164,7 +164,7 @@ function ModalChargeCreate({ handleClose }) {
 
 					<div className='buttons'>
 						<button className='cancel'>Cancelar</button>
-						<button type='submit' className='apply'>
+						<button type='submit' className='apply' onClick={() => handleClose()}>
 							Aplicar
 						</button>
 					</div>

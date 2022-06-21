@@ -17,7 +17,8 @@ import Filter from "../../assets/filter.svg";
 import Lupa from "../../assets/search.svg";
 import Delete_Charge from "../../assets/delete-charge.svg";
 import ModalDelete from "../../components/ModalDelete";
-import ModalEditCharge from "../../components/ModalEditCharge";
+import ModalChargeEdit from "../../components/ModalChargeEdit";
+import Search  from "../../components/Search";
 // import DeleteError from "../../components/DeleteError";
 // import DeleteSuccess from "../../components/DeleteSuccess";
 
@@ -29,16 +30,11 @@ function Charges() {
     const [openProfileModal, setOpenProfileModal] = useState(false);
     const [openEditModal, setOpenEditModal] = useState(false);
     const [openDeleteModal, setOpenDeleteModal] = useState(false);
-    const [openErroDelete, setOpenErrorDelete] = useState(false);
-    const [openSucessDelete, setOpenSucessDelete] = useState(false);
     const [search, setSearch] = useState('')
-
-    const lowerSearch = search.toLowerCase
-    const filterCharges = chargesClients.filter((charge) => charge.toLowerCase().includes(lowerSearch))
 
     async function loadCharges() {
         try {
-            const response = await api.get('/cobrancas');
+            const response = await api.get('/transaction/all');
             setchargesClients(response.data);
 
         } catch (error) {
@@ -122,7 +118,8 @@ function Charges() {
                                     <th>Descrição</th>
                                 </tr>
                             </thead>
-                            {filterCharges.map((charge) => (
+                            {chargesClients.length === 0 ? <tr><td colSpan={"6"}><Search /></td></tr>  : 
+                            chargesClients.map((charge) => (
                                 <tbody key={charge.id}>
                                     <tr>
                                         <td>{charge.name}</td>
@@ -158,7 +155,7 @@ function Charges() {
                     </div>
 
                     {openEditModal && (
-                        <ModalEditCharge setOpenEditModal={setOpenEditModal} />
+                        <ModalChargeEdit setOpenEditModal={setOpenEditModal} />
                     )}
                     {openDeleteModal && (
                         <ModalDelete setOpenDeleteModal={setOpenDeleteModal} />

@@ -4,6 +4,8 @@
     width: 1116px;
     height: 552.44px;
 
+    z-index: 1;
+
     position: relative;
 
     display: flex;
@@ -22,21 +24,21 @@
 
 }
 
-.search-centralize .person {
+/* .search-centralize .person {
     width: 128px;
     height: 128px;
 
+    top: 0;
+    left: 0;
+
     position: absolute;
-}
-
+} */
+/* 
 .search-centralize .magnifier {
-    width: 207.83px;
-    height: 207.83px;
-}
+    margin-top: 55.29px;
+} */
 
-.search-centralize h4 {
-    margin-top: 74.08px;
-
+/* .search-centralize h4 {
     font-family: 'Montserrat';
     font-weight: 600;
     font-size: 28px;
@@ -53,4 +55,4 @@
     line-height: 29px;
 
     color: #9B9BB2;
-}
+} */

@@ -28,17 +28,7 @@ function ModalChargeEdit({ handleClose }) {
 			[e.target.name]: value,
 		});
 	}
-	//ESTÁ FUNÇAO NAO ESTA FUNCIONANDO.
-	// async function handleGet(){
-	// 	try {
-	// 		const response = await api.get("/transaction/5");
-	// 		console.log(response.data);
-			
-	// 	} catch (error) {
-	// 		console.log(error.message);
-	// 	}
-	// }
-	// handleGet()
+
 
 	async function handleSubmit(e) {
 		e.preventDefault();

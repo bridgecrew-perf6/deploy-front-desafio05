@@ -46,7 +46,10 @@ function Profile({
 								className='cursor-pointer'
 								src={imageEdit}
 								alt=''
-								onClick={() => setOpenProfileModal(true)}
+								onClick={() => {
+									setOpenProfileModal(true); 
+									handleVisible()
+								}}
 							/>
 							<img
 								className='cursor-pointer'

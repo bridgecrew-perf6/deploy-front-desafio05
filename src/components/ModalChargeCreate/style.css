@@ -1,13 +1,16 @@
 .register-clients {
+	width: 100%;
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 	background: rgba(145, 154, 150, 0.3);
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	backdrop-filter: blur(4px);
 }
 
 .register-clients .container {
@@ -162,11 +165,11 @@
 	border-radius: 25px;
 }
 
-.label-container:hover input ~ .checkmark {
+.label-container:hover input~.checkmark {
 	background-color: #ccc;
 }
 
-.label-container input:checked ~ .checkmark {
+.label-container input:checked~.checkmark {
 	background-color: #0e8750;
 }
 
@@ -185,6 +188,6 @@
 	transform: rotate(45deg);
 }
 
-.label-container input:checked ~ .checkmark:after {
+.label-container input:checked~.checkmark:after {
 	display: block;
 }

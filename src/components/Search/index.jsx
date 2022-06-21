@@ -5,10 +5,9 @@ function Search() {
     return (
         <div className="search-name">
             <div className="search-centralize">
-                <img className="person" src={PersonSearch} alt="" />
                 <img className="magnifier"src={Magnifier} />
-                <h4>Nenhum resultado foi encontrado!</h4>
-                <p>Verifique se escrita está correta</p>
+                {/* <h4>Nenhum resultado foi encontrado!</h4>
+                <p>Verifique se escrita está correta</p> */}
             </div>
         </div>
     )
