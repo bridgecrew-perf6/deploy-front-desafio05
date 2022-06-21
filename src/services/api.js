@@ -7,7 +7,7 @@ export default axios.create({
     baseURL: 'https://api-desafio5.herokuapp.com',
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'authorization': `Bearer ${token}`
     }
 });
 
