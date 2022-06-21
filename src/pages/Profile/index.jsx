@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ArrowImg from "../../assets/arrow.svg";
 import ClientDanger from "../../assets/client-danger.svg";
@@ -18,43 +18,38 @@ import NavLink from "../../components/NavLinks";
 import ProfileModal from "../../components/ProfileModal";
 import TableCharge from "../../components/TableCharge";
 import TableClients from "../../components/TableClients";
-import api from '../../services/api'
+import api from "../../services/api";
 import "./style.css";
-
 function Profile() {
 	const [openProfileModal, setOpenProfileModal] = useState(false);
 	const [pendent, setPendent] = useState();
 	const [onDay, setOnDay] = useState();
 	const [transaction, settransaction] = useState();
 
-
-
 	useEffect(() => {
 		async function handleGet() {
-			const pendent = await api.get('/transaction/pendent');
+			const pendent = await api.get("/transaction/pendent");
 			const onDay = await api.get("/transaction/payd");
-			const transaction = await api.get('/transaction/all')
+			const transaction = await api.get("/transaction/all");
 
-			setPendent(pendent.data)
-			setOnDay(onDay.data)
-			settransaction(transaction.data)
+			setPendent(pendent.data);
+			setOnDay(onDay.data);
+			settransaction(transaction.data);
 		}
 		handleGet();
-	}, [])
-	let clientsPendentAll = []
-	let clientsOnDayAll = []
+	}, []);
+	let clientsPendentAll = [];
+	let clientsOnDayAll = [];
 
-	if(transaction){
-
-		for(let i = 0; i <= transaction.length -1; i++){
-			if(transaction[i].onday === false){
-				clientsPendentAll.push(transaction[i])
+	if (transaction) {
+		for (let i = 0; i <= transaction.length - 1; i++) {
+			if (transaction[i].onday === false) {
+				clientsPendentAll.push(transaction[i]);
 			}
 			clientsOnDayAll.push(transaction[i]);
 		}
 	}
-	
-	
+
 	return (
 		<div className='container-profile'>
 			<nav className='container-navbar-items'>
@@ -109,45 +104,45 @@ function Profile() {
 					/>
 				</div>
 				<div className='container-profile-cards '>
-					{pendent && 
+					{pendent && (
 						<TableCharge
 							text='Cobranças Vencidas'
 							obj={pendent}
 							countStyleColor='table-charge-count-danger'
 						/>
-					}
-					{transaction &&
+					)}
+					{transaction && (
 						<TableCharge
 							text='Cobranças Previstas'
 							obj={transaction}
 							countStyleColor='table-charge-count-caution'
 						/>
-					}
-					{onDay &&
+					)}
+					{onDay && (
 						<TableCharge
 							text='Cobranças Pagas'
 							obj={onDay}
 							countStyleColor='table-charge-count-success'
 						/>
-					}
+					)}
 				</div>
 				<div className='container-profile-cards '>
-					{transaction &&
+					{transaction && (
 						<TableClients
-						text='Clientes Inadimplentes'
+							text='Clientes Inadimplentes'
 							image={ClientDanger}
 							obj2={clientsPendentAll}
 							countStyleColor='table-charge-count-danger'
 						/>
-					}
-					{transaction &&
+					)}
+					{transaction && (
 						<TableClients
-						text='Clientes em dia'
+							text='Clientes em dia'
 							image={ClientSuccess}
 							obj2={clientsOnDayAll}
 							countStyleColor='table-charge-count-success'
 						/>
-					}
+					)}
 				</div>
 				{openProfileModal && (
 					<ProfileModal handleClose={() => setOpenProfileModal(false)} />

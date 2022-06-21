@@ -24,7 +24,6 @@ function SignUp() {
 	const [errorEmail, setErrorEmail] = useState("");
 	const [errorPassword, setErrorPassword] = useState("");
 	const [errorConfirmPassword, setErrorConfirmPassword] = useState("");
-
 	const [forms, setForms] = useState({
 		nome: "",
 		email: "",
@@ -105,164 +104,174 @@ function SignUp() {
 
 		if (forms.password !== forms.confirmPassword) {
 			setErrorConfirmPassword("As senhas não coincidem");
-			return;
-		}
-		setErrorConfirmPassword("");
-		setSucesso(true);
-		setlogin({
-			infos: false,
-			password: false,
-		});
-		setCountState(countState + 1);
-		console.log("Cadastro realizado com sucesso");
-		console.log(forms);
-		handleApi();
+			if (!forms.password || !forms.confirmPassword) {
+				setError("Todos os campos são obrigatórios");
+				console.log(error);
+				return;
+			}
+			if (forms.password !== forms.confirmPassword) {
+				setError("password não confirmada");
+				console.log(error);
+				return;
+			}
+			setErrorConfirmPassword("");
+			setSucesso(true);
+			setlogin({
+				infos: false,
+				password: false,
+			});
+			setCountState(countState + 1);
+			console.log("Cadastro realizado com sucesso");
+			console.log(forms);
+			handleApi();
 
-		if (sucesso) {
+			if (sucesso) {
+				setForms({
+					nome: "",
+					email: "",
+					password: "",
+					confirmPassword: "",
+				});
+			}
+		}
+
+		function handleChangeForm(e) {
+			const value = e.target.value;
 			setForms({
-				nome: "",
-				email: "",
-				password: "",
-				confirmPassword: "",
+				...forms,
+				[e.target.name]: value,
 			});
 		}
-	}
 
-	function handleChangeForm(e) {
-		const value = e.target.value;
-		setForms({
-			...forms,
-			[e.target.name]: value,
-		});
-	}
+		async function handleApi() {
+			try {
+				const response = await api.post("/user", {
+					name: forms.nome,
+					email: forms.email,
+					password: forms.password,
+				});
 
-	async function handleApi() {
-		try {
-			const response = await api.post("/user", {
-				name: forms.nome,
-				email: forms.email,
-				password: forms.password,
-			});
-
-			console.log(response);
-		} catch (error) {
-			console.log(error);
+				console.log(response);
+			} catch (error) {
+				console.log(error);
+			}
 		}
+
+		return (
+			<div className='container-sign-up'>
+				<Stepper obj={obj} countState={countState} />
+
+				{login.infos ? (
+					<form className='div-register' onSubmit={handleSubmitRegister}>
+						<div className='column'>
+							<CardSignUp
+								header='Adicione seus dados'
+								// esta no lugar errado, olhar figma
+							>
+								<Inputs
+									type='text'
+									name='nome'
+									label='Nome*'
+									id='nome'
+									placeholder='Digite seu nome'
+									value={forms.nome}
+									handleChangeForm={handleChangeForm}
+									error={errorName}
+								/>
+
+								<Inputs
+									type='email'
+									name='email'
+									label='E-mail*'
+									id='email'
+									placeholder='Digite seu e-mail'
+									value={forms.email}
+									handleChangeForm={handleChangeForm}
+									error={errorEmail}
+								/>
+							</CardSignUp>
+
+							<Btn type='submit' text='Continuar' />
+
+							<div className='footer-menu-title'>
+								<h1 className='menu-title'>Já possui uma conta? Faça seu</h1>
+								<Link to='/'>
+									<span className='pink menu-title'>Login</span>
+								</Link>
+							</div>
+							<div className='lines'>
+								<img src={LineGreen} alt='' />
+								<img src={LineWhite} alt='' />
+								<img src={LineWhite} alt='' />
+							</div>
+						</div>
+					</form>
+				) : login.password ? (
+					<form className='div-register' onSubmit={handleSubmitPassword}>
+						<div className='center-form'>
+							<CardSignUp
+								header='Escolha uma senha'
+								footer={
+									<Link to='/'>
+										Já possui uma conta? Faça seu <span>Login</span>
+									</Link>
+								}
+							>
+								<Inputs
+									type='password'
+									name='password'
+									label='Senha*'
+									placeholder='Digite sua senha'
+									id='password'
+									placeholder='••••••••'
+									value={forms.password}
+									handleChangeForm={handleChangeForm}
+									error={errorPassword}
+									reveal={ImgEye}
+								/>
+								<Inputs
+									type='password'
+									name='confirmPassword'
+									label='Repita a senha*'
+									id='confirmPassword'
+									placeholder='••••••••'
+									value={forms.confirmPassword}
+									handleChangeForm={handleChangeForm}
+									error={errorConfirmPassword}
+									reveal={ImgEye}
+								/>
+							</CardSignUp>
+							<Btn type='submit' text='Entrar' />
+							<div className='lines'>
+								<img src={LineWhite} alt='' />
+								<img src={LineGreen} alt='' />
+								<img src={LineWhite} alt='' />
+							</div>
+						</div>
+					</form>
+				) : (
+					<div className='div-register'>
+						<div className='column'>
+							<CardSucess />
+							<Btn
+								type='submit'
+								text={
+									<Link to='/'>
+										<span className='span-white'>Ir para Login</span>
+									</Link>
+								}
+							/>
+							<div className='lines-final'>
+								<img src={LineWhite} alt='' />
+								<img src={LineWhite} alt='' />
+								<img src={LineGreen} alt='' />
+							</div>
+						</div>
+					</div>
+				)}
+			</div>
+		);
 	}
-
-	return (
-		<div className='container-sign-up'>
-			<Stepper obj={obj} countState={countState} />
-
-			{login.infos ? (
-				<form className='div-register' onSubmit={handleSubmitRegister}>
-					<div className='column'>
-						<CardSignUp
-							header='Adicione seus dados'
-							// esta no lugar errado, olhar figma
-						>
-							<Inputs
-								type='text'
-								name='nome'
-								label='Nome*'
-								id='nome'
-								placeholder='Digite seu nome'
-								value={forms.nome}
-								handleChangeForm={handleChangeForm}
-								error={errorName}
-							/>
-
-							<Inputs
-								type='email'
-								name='email'
-								label='E-mail*'
-								id='email'
-								placeholder='Digite seu e-mail'
-								value={forms.email}
-								handleChangeForm={handleChangeForm}
-								error={errorEmail}
-							/>
-						</CardSignUp>
-
-						<Btn type='submit' text='Continuar' />
-
-						<div className='footer-menu-title'>
-							<h1 className='menu-title'>Já possui uma conta? Faça seu</h1>
-							<Link to='/'>
-								<span className='pink menu-title'>Login</span>
-							</Link>
-						</div>
-						<div className='lines'>
-							<img src={LineGreen} alt='' />
-							<img src={LineWhite} alt='' />
-							<img src={LineWhite} alt='' />
-						</div>
-					</div>
-				</form>
-			) : login.password ? (
-				<form className='div-register' onSubmit={handleSubmitPassword}>
-					<div className='center-form'>
-						<CardSignUp
-							header='Escolha uma senha'
-							footer={
-								<Link to='/'>
-									Já possui uma conta? Faça seu <span>Login</span>
-								</Link>
-							}
-						>
-							<Inputs
-								type='password'
-								name='password'
-								label='Senha*'
-								id='password'
-								placeholder='••••••••'
-								value={forms.password}
-								handleChangeForm={handleChangeForm}
-								error={errorPassword}
-								reveal={ImgEye}
-							/>
-							<Inputs
-								type='password'
-								name='confirmPassword'
-								label='Repita a senha*'
-								id='confirmPassword'
-								placeholder='••••••••'
-								value={forms.confirmPassword}
-								handleChangeForm={handleChangeForm}
-								error={errorConfirmPassword}
-								reveal={ImgEye}
-							/>
-						</CardSignUp>
-						<Btn type='submit' text='Entrar' />
-						<div className='lines'>
-							<img src={LineWhite} alt='' />
-							<img src={LineGreen} alt='' />
-							<img src={LineWhite} alt='' />
-						</div>
-					</div>
-				</form>
-			) : (
-				<div className='div-register'>
-					<div className='column'>
-						<CardSucess />
-						<Btn
-							type='submit'
-							text={
-								<Link to='/'>
-									<span className='span-white'>Ir para Login</span>
-								</Link>
-							}
-						/>
-						<div className='lines-final'>
-							<img src={LineWhite} alt='' />
-							<img src={LineWhite} alt='' />
-							<img src={LineGreen} alt='' />
-						</div>
-					</div>
-				</div>
-			)}
-		</div>
-	);
 }
 
 export default SignUp;
