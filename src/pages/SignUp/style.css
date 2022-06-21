@@ -1,10 +1,12 @@
-.container {
+.container-sign-up {
 	display: flex;
+	min-width: 100vw;
 	min-height: 100vh;
 }
 
 .div-register {
-	width: 66%;
+	display: flex;
+	min-width: 60vw;
 }
 
 .footer-menu-title {
@@ -28,6 +30,10 @@ span.pink {
 	text-decoration: underline;
 }
 
+a {
+	text-decoration: none;
+}
+
 .lines {
 	display: flex;
 	justify-content: center;
@@ -35,12 +41,21 @@ span.pink {
 	margin-top: 27.6rem;
 }
 
-a {
-	text-decoration: none;
+.lines-final {
+	display: flex;
+	justify-content: center;
+	margin-top: 6rem;
+	gap: 8px;
 }
 
-.white {
-	color: #f8f8f9;
+@media (max-width: 1440px) {
+	.lines {
+		margin-top: 8.5rem;
+	}
+
+	.div-register {
+		min-width: 55vw;
+	}
 }
 
 .center-form {

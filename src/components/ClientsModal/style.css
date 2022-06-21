@@ -1,0 +1,122 @@
+.register-clients {
+	width: 100%;
+	
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(145, 154, 150, 0.3);
+	backdrop-filter: blur(4px);
+}
+
+.register-clients .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30.18px 30.67px 40.78px 30.67px;
+	background: #ffffff;
+	border-radius: 30px;
+}
+
+.container img {
+	width: 32px;
+	height: 29.69px;
+
+	display: flex;
+	justify-self: right;
+}
+
+.container-header {
+	width: 478px;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.container-header .theme-modal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.container-header .theme-modal img {
+	width: 32px;
+	height: 32px;
+}
+
+.container-header .theme-modal h3 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 130%;
+	color: #3f3f55;
+}
+
+.container form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.cpf-phone {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.cep-district {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.city-uf {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.buttons {
+	margin-top: 57.81px;
+
+	display: flex;
+	gap: 24px;
+}
+
+.buttons .cancel {
+	width: 233.98px;
+	height: 33px;
+
+	background: #f8f8f9;
+	border: 1px solid #dedee9;
+	border-radius: 10px;
+
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #0e8750;
+}
+
+.buttons .apply {
+	width: 233.98px;
+	height: 33px;
+
+	background: #da0175;
+	border: 1px solid #dedee9;
+	border-radius: 10px;
+
+	font-family: "Nunito", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 25px;
+	color: #f8f8f9;
+}
