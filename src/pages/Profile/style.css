@@ -1,0 +1,63 @@
+body {
+	background-color: #f8f8f9;
+}
+
+.container-profile {
+	display: flex;
+}
+
+nav {
+	display: flex;
+	min-height: 100vh;
+	width: 10.8rem;
+	background-color: #f0f0f5;
+	padding-top: 55px;
+}
+
+.container-profile-user {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 108px 0 60px;
+	margin-top: 54px;
+	width: 100%;
+}
+
+.divisor-profile {
+	margin: 24px 32px;
+	color: #acd9c5;
+	background-color: #acd9c5;
+	border: 1px solid #acd9c5;
+}
+
+.container-profile-dashboard {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.container-profile-card-charge {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 114px 0 80px;
+}
+
+.container-profile-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0px 114px 24px 80px;
+	gap: 36px;
+}
+
+.container-navbar-items {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 81px;
+}
+
+.profile-gap {
+	gap: 10px;
+}

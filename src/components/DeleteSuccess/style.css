@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito:wght@400;600;700&display=swap');
+
+.delete-sucess-charges-blue {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.containe-sucess-delete {
+    width: 354px;
+    height: 54px;
+
+    position: absolute;
+    left: 46px;
+    top: 250px;
+
+    padding: 0px 19px 0px 20.75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #C3D4FE;
+    box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.v-sucess {
+    width: 24px;
+    height: 24px;
+}
+
+.containe-sucess-delete p {
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #243F80;
+}
+
+.x-delete {
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+}

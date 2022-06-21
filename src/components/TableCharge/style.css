@@ -1,0 +1,89 @@
+.container-table-charge {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: #ffffff;
+	border-radius: 25px;
+	padding: 15px 0;
+	min-width: 367px;
+}
+
+.table-charge-div-title {
+	width: 100%;
+	justify-content: space-between;
+	align-items: baseline;
+	padding-left: 54px;
+	padding-right: 24px;
+	margin-bottom: 5px;
+}
+
+.margin-text-charge {
+	margin-right: 23px;
+}
+
+.table-charge-div-subtitle {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding-top: 10px;
+}
+
+.font-charge-subtitle {
+	font-family: "Nunito";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 5rem;
+	letter-spacing: 0.005em;
+	color: #3f3f55;
+	border-top: 1px solid #eff0f6;
+	border-bottom: 1px solid #eff0f6;
+	padding: 0 15px;
+	text-align: center;
+}
+
+.font-charge-info {
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.4rem;
+	line-height: 4rem;
+	letter-spacing: 0.005em;
+	color: #6e6e85;
+	border-bottom: 1px solid #eff0f6;
+	padding: 0 10px;
+	text-align: center;
+}
+
+span.table-charge-count {
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 1.6rem;
+	line-height: 2.1rem;
+	border-radius: 8px;
+	padding: 0 15px;
+}
+
+span.table-charge-count-danger {
+	color: #971d1d;
+	background-color: #ffefef;
+}
+
+span.table-charge-count-caution {
+	color: #c5a605;
+	background-color: #fcf6dc;
+}
+
+span.table-charge-count-success {
+	color: #1fa7af;
+	background-color: #eef6f6;
+}
+
+span.table-charge-footer {
+	color: #da0175;
+	text-decoration: underline;
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 2.3rem;
+	cursor: pointer;
+	margin: 13px 0 12px 0;
+}

@@ -91,6 +91,31 @@ body {
 	align-items: center;
 }
 
+.title-main-table {
+	font-family: "Montserrat";
+	font-weight: 600;
+	font-size: 2.6rem;
+	line-height: 3.4rem;
+}
+
+.font-profile {
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.8rem;
+	line-height: 2.5rem;
+	color: #0e8750;
+}
+
+.font-radio {
+	font-family: "Nunito";
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #3f3f55;
+}
+
+/* pre-confs */
+
 .mg-left-24 {
 	margin-left: 24px;
 }
@@ -110,4 +135,24 @@ body {
 
 .ai-center {
 	align-items: center;
+}
+
+.main-pink {
+	color: #da0175;
+}
+
+.color-navbar-text-default {
+	color: #343447;
+}
+
+.ai-baseline {
+	align-items: baseline;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.span-white {
+	color: #ffffff;
 }
